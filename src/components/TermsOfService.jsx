@@ -14,7 +14,7 @@ export default function TermsOfService() {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <img src="/htk-logo.png" alt="HTK Logo" className="h-10 w-10" />
+              <img src="/htk-logo-large.png" alt="HTK Logo" className="h-16 w-16" />
               <span className="text-xl font-bold text-yellow-400">HANDY TO KNOW</span>
             </div>
             <Button 

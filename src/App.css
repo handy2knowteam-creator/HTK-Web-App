@@ -120,128 +120,387 @@
 }
 
 
-/* HTK Custom Styling - Professional Black & Gold Theme */
+/* HTK Premium Luxury Theme - Gold & Black Excellence */
 
-/* Textured black background */
-body {
-  background: #000000;
-  background-image: 
-    radial-gradient(circle at 25% 25%, #1a1a1a 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, #0f0f0f 0%, transparent 50%),
-    linear-gradient(45deg, transparent 40%, rgba(218, 165, 32, 0.02) 50%, transparent 60%);
-  background-size: 400px 400px, 300px 300px, 200px 200px;
-  background-position: 0 0, 100px 100px, 50px 50px;
-  min-height: 100vh;
-}
-
-/* Enhanced golden colors matching HTK logo */
+/* Enhanced color palette for luxury feel */
 :root {
-  --htk-gold: #DAA520;
+  --htk-gold-primary: #DAA520;
   --htk-gold-light: #F4E4BC;
   --htk-gold-dark: #B8860B;
   --htk-gold-accent: #FFD700;
+  --htk-gold-metallic: #E6C200;
+  --htk-black-primary: #000000;
+  --htk-black-secondary: #0a0a0a;
+  --htk-black-tertiary: #1a1a1a;
+  --htk-gray-luxury: #2a2a2a;
 }
 
-/* Professional text colors */
-.text-htk-gold {
-  color: var(--htk-gold);
-}
-
-.text-htk-gold-light {
-  color: var(--htk-gold-light);
-}
-
-.text-htk-gold-dark {
-  color: var(--htk-gold-dark);
-}
-
-.text-htk-gold-accent {
-  color: var(--htk-gold-accent);
-}
-
-/* Textured card backgrounds */
-.htk-card {
-  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+/* Luxurious textured background */
+body {
+  background: var(--htk-black-primary);
   background-image: 
-    radial-gradient(circle at 20% 80%, rgba(218, 165, 32, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(218, 165, 32, 0.03) 0%, transparent 50%);
-  border: 1px solid rgba(218, 165, 32, 0.2);
+    radial-gradient(circle at 25% 25%, var(--htk-black-tertiary) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, var(--htk-black-secondary) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 40%, rgba(218, 165, 32, 0.03) 50%, transparent 60%),
+    linear-gradient(135deg, transparent 30%, rgba(255, 215, 0, 0.02) 70%);
+  background-size: 600px 600px, 400px 400px, 300px 300px, 800px 800px;
+  background-position: 0 0, 200px 200px, 100px 100px, 300px 300px;
+  min-height: 100vh;
+  animation: luxuryShimmer 30s ease-in-out infinite;
 }
 
-/* Premium button styling */
-.htk-btn-gold {
-  background: linear-gradient(135deg, var(--htk-gold) 0%, var(--htk-gold-dark) 100%);
-  color: #000000;
+@keyframes luxuryShimmer {
+  0%, 100% { 
+    background-position: 0 0, 200px 200px, 100px 100px, 300px 300px; 
+  }
+  50% { 
+    background-position: 100px 100px, 300px 300px, 200px 200px, 400px 400px; 
+  }
+}
+
+/* Premium luxury text effects */
+.htk-text-luxury {
+  background: linear-gradient(135deg, 
+    var(--htk-gold-accent) 0%, 
+    var(--htk-gold-primary) 25%, 
+    var(--htk-gold-metallic) 50%, 
+    var(--htk-gold-primary) 75%, 
+    var(--htk-gold-dark) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(218, 165, 32, 0.4);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Accomplishment badges and success indicators */
+.htk-achievement-badge {
+  background: linear-gradient(135deg, var(--htk-gold-primary) 0%, var(--htk-gold-accent) 100%);
+  color: var(--htk-black-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
   font-weight: 600;
+  font-size: 0.875rem;
+  box-shadow: 
+    0 4px 20px rgba(218, 165, 32, 0.4),
+    0 0 40px rgba(255, 215, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.htk-achievement-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: achievementShine 3s ease-in-out infinite;
+}
+
+@keyframes achievementShine {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* Premium card styling with luxury feel */
+.htk-card-luxury {
+  background: linear-gradient(135deg, 
+    var(--htk-black-tertiary) 0%, 
+    var(--htk-black-secondary) 25%, 
+    var(--htk-black-tertiary) 50%, 
+    var(--htk-gray-luxury) 75%, 
+    var(--htk-black-tertiary) 100%);
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(218, 165, 32, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 48%, rgba(218, 165, 32, 0.02) 52%);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(218, 165, 32, 0.15),
+    inset 0 1px 0 rgba(255, 215, 0, 0.1);
+}
+
+.htk-card-luxury::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--htk-gold-primary), var(--htk-gold-accent), var(--htk-gold-dark));
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+}
+
+.htk-card-luxury:hover {
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(218, 165, 32, 0.25),
+    inset 0 1px 0 rgba(255, 215, 0, 0.2);
+  transform: translateY(-2px);
   transition: all 0.3s ease;
 }
 
-.htk-btn-gold:hover {
-  background: linear-gradient(135deg, var(--htk-gold-accent) 0%, var(--htk-gold) 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 10px 25px rgba(218, 165, 32, 0.3);
-}
-
-/* Professional text styling */
-.htk-text-professional {
-  color: #e5e7eb;
-  line-height: 1.7;
-}
-
-.htk-text-muted {
-  color: #9ca3af;
-  line-height: 1.6;
-}
-
-/* Header styling */
-.htk-header {
-  background: linear-gradient(135deg, #1f1f1f 0%, #0a0a0a 100%);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(218, 165, 32, 0.2);
-}
-
-/* Section dividers */
-.htk-divider {
-  background: linear-gradient(90deg, transparent 0%, rgba(218, 165, 32, 0.3) 50%, transparent 100%);
-  height: 1px;
-}
-
-/* Logo consistency */
-.htk-logo-container {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.htk-logo-text {
-  color: var(--htk-gold);
+/* Premium button with accomplishment feel */
+.htk-btn-luxury {
+  background: linear-gradient(135deg, var(--htk-gold-primary) 0%, var(--htk-gold-accent) 100%);
+  color: var(--htk-black-primary);
   font-weight: 700;
-  font-size: 1.25rem;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 6px 25px rgba(218, 165, 32, 0.4),
+    0 0 20px rgba(255, 215, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.htk-btn-luxury::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.htk-btn-luxury:hover {
+  background: linear-gradient(135deg, var(--htk-gold-accent) 0%, var(--htk-gold-metallic) 100%);
+  box-shadow: 
+    0 8px 35px rgba(218, 165, 32, 0.6),
+    0 0 30px rgba(255, 215, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px);
+}
+
+.htk-btn-luxury:hover::before {
+  left: 100%;
+}
+
+/* Premium logo enhancement with luxury glow */
+.htk-logo-luxury {
+  filter: 
+    drop-shadow(0 0 20px rgba(218, 165, 32, 0.5)) 
+    drop-shadow(0 0 40px rgba(255, 215, 0, 0.3))
+    drop-shadow(0 0 60px rgba(218, 165, 32, 0.1));
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.htk-logo-luxury::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  background: radial-gradient(circle, rgba(218, 165, 32, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  animation: logoGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+  0% { 
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% { 
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.htk-logo-luxury:hover {
+  filter: 
+    drop-shadow(0 0 30px rgba(218, 165, 32, 0.7)) 
+    drop-shadow(0 0 60px rgba(255, 215, 0, 0.5))
+    drop-shadow(0 0 90px rgba(218, 165, 32, 0.2));
+  transform: scale(1.05);
+}
+
+/* Success and accomplishment indicators */
+.htk-success-indicator {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
+}
+
+.htk-premium-indicator {
+  background: linear-gradient(135deg, var(--htk-gold-primary) 0%, var(--htk-gold-accent) 100%);
+  color: var(--htk-black-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(218, 165, 32, 0.4);
+}
+
+/* Luxury header styling */
+.htk-header-luxury {
+  background: linear-gradient(135deg, 
+    var(--htk-black-primary) 0%, 
+    var(--htk-black-tertiary) 50%, 
+    var(--htk-black-primary) 100%);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(218, 165, 32, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Premium stats and metrics */
+.htk-stat-luxury {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--htk-card-luxury);
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.htk-stat-luxury::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--htk-gold-primary), var(--htk-gold-accent), var(--htk-gold-primary));
+}
+
+.htk-stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--htk-gold-accent) 0%, var(--htk-gold-primary) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(218, 165, 32, 0.3);
+}
+
+.htk-stat-label {
+  color: #e5e7eb;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-/* Premium shadows and effects */
-.htk-shadow-gold {
-  box-shadow: 0 4px 20px rgba(218, 165, 32, 0.15);
+/* Mobile responsiveness for luxury theme */
+@media (max-width: 768px) {
+  .htk-logo-luxury {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .htk-btn-luxury {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .htk-stat-number {
+    font-size: 2rem;
+  }
 }
 
-.htk-border-gold {
-  border-color: rgba(218, 165, 32, 0.3);
+
+/* Premium Logo Enhancement */
+.htk-logo-premium {
+  filter: drop-shadow(0 0 20px rgba(218, 165, 32, 0.4)) 
+          drop-shadow(0 0 40px rgba(218, 165, 32, 0.2));
+  transition: all 0.3s ease;
 }
 
-/* Hover effects */
-.htk-hover-gold:hover {
-  border-color: rgba(218, 165, 32, 0.5);
-  box-shadow: 0 8px 25px rgba(218, 165, 32, 0.2);
+.htk-logo-premium:hover {
+  filter: drop-shadow(0 0 30px rgba(218, 165, 32, 0.6)) 
+          drop-shadow(0 0 60px rgba(218, 165, 32, 0.3));
+  transform: scale(1.05);
 }
 
-/* Professional spacing */
-.htk-section-padding {
-  padding: 5rem 1.5rem;
+/* Logo size variations */
+.htk-logo-small {
+  width: 3rem;
+  height: 3rem;
 }
 
-.htk-container {
-  max-width: 1280px;
-  margin: 0 auto;
+.htk-logo-medium {
+  width: 4rem;
+  height: 4rem;
+}
+
+.htk-logo-large {
+  width: 5rem;
+  height: 5rem;
+}
+
+.htk-logo-xl {
+  width: 6rem;
+  height: 6rem;
+}
+
+/* Mobile responsive logo sizing */
+@media (max-width: 768px) {
+  .htk-logo-xl {
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  .htk-logo-large {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  
+  .htk-logo-medium {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* Enhanced text effects for HTK branding */
+.htk-text-gradient {
+  background: linear-gradient(135deg, var(--htk-gold) 0%, var(--htk-gold-accent) 50%, var(--htk-gold-dark) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(218, 165, 32, 0.3);
+}
+
+/* Premium glow effects */
+.htk-glow-gold {
+  box-shadow: 
+    0 0 20px rgba(218, 165, 32, 0.3),
+    0 0 40px rgba(218, 165, 32, 0.1),
+    inset 0 0 20px rgba(218, 165, 32, 0.05);
+}
+
+/* Enhanced card styling */
+.htk-card-premium {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
+  background-image: 
+    radial-gradient(circle at 30% 70%, rgba(218, 165, 32, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(218, 165, 32, 0.05) 0%, transparent 50%);
+  border: 1px solid rgba(218, 165, 32, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.htk-card-premium:hover {
+  border-color: rgba(218, 165, 32, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
+              0 0 20px rgba(218, 165, 32, 0.2);
 }
 

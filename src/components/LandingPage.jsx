@@ -1,12 +1,10 @@
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { useState } from 'react'
 import { Star, Shield, Clock, Users, CheckCircle, ArrowRight, Hammer, Wrench, Home, Phone, User, MapPin, BookOpen, Network } from 'lucide-react'
+import NavigationMenu from './NavigationMenu'
 
 export default function LandingPage() {
   const navigate = useNavigate()
@@ -24,42 +22,42 @@ export default function LandingPage() {
   }
 
   const stats = [
-    { number: '10,000+', label: 'Verified Tradespeople' },
-    { number: '50,000+', label: 'Jobs Completed' },
-    { number: '4.9/5', label: 'Average Rating' },
-    { number: '24/7', label: 'Customer Support' }
+    { number: 'NEW', label: 'Platform Launching' },
+    { number: 'BETA', label: 'Early Access Available' },
+    { number: '2024', label: 'Built for Modern Trades' },
+    { number: '24/7', label: 'Platform Support' }
   ]
 
   const features = [
     {
       icon: Shield,
-      title: 'Verified Professionals',
-      description: 'All tradespeople are background checked and insurance verified'
+      title: 'Built by Trades',
+      description: 'Created by tradespeople who understand the industry challenges'
     },
     {
       icon: Star,
-      title: 'Real Reviews',
-      description: 'Genuine customer reviews from completed jobs'
+      title: 'Fair Platform',
+      description: 'No commission fees - keep what you earn'
     },
     {
       icon: Clock,
-      title: 'Quick Response',
-      description: 'Get quotes within hours, not days'
+      title: 'Modern Technology',
+      description: 'Live streaming, portfolios, and direct customer connection'
     },
     {
       icon: Users,
-      title: 'Local Experts',
-      description: 'Find skilled professionals in your area'
+      title: 'Community First',
+      description: 'Join the founding community of professional tradespeople'
     }
   ]
 
-  const trades = [
-    { name: 'Plumbing', icon: Wrench, jobs: '2,500+' },
-    { name: 'Electrical', icon: Hammer, jobs: '3,200+' },
-    { name: 'Carpentry', icon: Home, jobs: '1,800+' },
-    { name: 'Painting', icon: Home, jobs: '2,100+' },
-    { name: 'Roofing', icon: Home, jobs: '1,400+' },
-    { name: 'Landscaping', icon: Home, jobs: '1,900+' }
+  const tradeServices = [
+    { name: 'Plumbing', icon: Wrench, status: 'Ready' },
+    { name: 'Electrical', icon: Hammer, status: 'Ready' },
+    { name: 'Carpentry', icon: Home, status: 'Ready' },
+    { name: 'Painting', icon: Home, status: 'Ready' },
+    { name: 'Roofing', icon: Home, status: 'Ready' },
+    { name: 'Heating', icon: Wrench, status: 'Ready' }
   ]
 
   return (
@@ -69,21 +67,44 @@ export default function LandingPage() {
         <div className="htk-container px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="htk-logo-container">
-              <img src="/htk-logo.png" alt="HTK Logo" className="h-10 w-10" />
+              <img src="/htk-logo-large.png" alt="HTK Logo" className="h-16 w-16" />
               <span className="htk-logo-text">HANDY TO KNOW</span>
               <span className="text-xs htk-text-muted">Built by trades, for trades</span>
             </div>
             <div className="hidden lg:flex items-center space-x-6">
-              <Button variant="ghost" className="htk-text-professional hover:text-htk-gold">How it Works</Button>
-              <Button variant="ghost" className="htk-text-professional hover:text-htk-gold">For Trades</Button>
-              <Button variant="ghost" className="htk-text-professional hover:text-htk-gold">Support</Button>
-              <Button variant="outline" className="htk-border-gold text-htk-gold hover:bg-htk-gold hover:text-black">Sign In</Button>
-            </div>
-            {/* Mobile menu button */}
-            <div className="lg:hidden">
-              <Button className="htk-btn-gold text-sm px-4 py-2">
-                Menu
+              <Button 
+                onClick={() => navigate('/coming-soon')}
+                variant="ghost" 
+                className="htk-text-professional hover:text-htk-gold"
+              >
+                How it Works
               </Button>
+              <Button 
+                onClick={() => navigate('/register/tradesperson')}
+                variant="ghost" 
+                className="htk-text-professional hover:text-htk-gold"
+              >
+                For Trades
+              </Button>
+              <Button 
+                onClick={() => navigate('/coming-soon')}
+                variant="ghost" 
+                className="htk-text-professional hover:text-htk-gold"
+              >
+                Support
+              </Button>
+              <Button 
+                onClick={() => navigate('/login/customer')}
+                variant="outline" 
+                className="htk-border-gold text-htk-gold hover:bg-htk-gold hover:text-black"
+              >
+                Sign In
+              </Button>
+              <NavigationMenu />
+            </div>
+            {/* Navigation Menu */}
+            <div className="lg:hidden">
+              <NavigationMenu />
             </div>
           </div>
         </div>
@@ -95,16 +116,20 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-left">
-              <Badge className="mb-6 bg-yellow-400/20 text-yellow-400 border-yellow-400/30">
-                #1 Tradesperson Platform in the UK
+              <Badge className="mb-6 bg-yellow-400/20 text-yellow-400 border-yellow-400/30 animate-pulse">
+                🚀 LAUNCHING SOON - Be Among the First!
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Connect with
-                <span className="text-yellow-400 block">Skilled Tradespeople</span>
-                in Minutes
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-white via-yellow-400 to-white bg-clip-text text-transparent">
+                Revolutionary
+                <span className="text-yellow-400 block animate-bounce">Trade Platform</span>
+                Built by Trades, for Trades
               </h1>
-              <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
-                Connect directly with verified, local tradespeople. Quality work, fair pricing, faster service, better results.
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto font-medium">
+                🔥 Join the BETA launch of the most exciting trade platform ever created! 
+                <span className="text-yellow-400 font-bold">No commission fees</span>, 
+                <span className="text-yellow-400 font-bold">live streaming</span>, and 
+                <span className="text-yellow-400 font-bold">direct customer connection</span>. 
+                The future of trades starts here! ⚡
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button 
@@ -460,7 +485,7 @@ export default function LandingPage() {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-white">{trade.name}</h3>
-                        <p className="text-gray-400 text-sm">{trade.jobs} jobs completed</p>
+                        <p className="text-gray-400 text-sm">Platform ready for {trade.name.toLowerCase()}</p>
                       </div>
                     </div>
                     <ArrowRight className="h-5 w-5 text-gray-400" />
@@ -544,23 +569,24 @@ export default function LandingPage() {
       {/* Call to Action Section */}
       <section className="py-20 px-6 bg-gradient-to-r from-yellow-400 to-yellow-500">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-black mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-black/80 mb-8 max-w-2xl mx-auto">
-            Join thousands of satisfied customers and tradespeople who trust HTK for their projects.
+          <h2 className="text-4xl font-bold text-black mb-6 animate-pulse">🔥 Ready to Make HISTORY? 🔥</h2>
+          <p className="text-xl text-black/80 mb-8 max-w-2xl mx-auto font-bold">
+            🎯 Be part of the REVOLUTION! Join the founding members of the most innovative trade platform ever built! 
+            <span className="text-black font-black">Early access = Better opportunities!</span> 🚀
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               onClick={() => navigate('/register/customer')}
-              className="bg-black hover:bg-gray-800 text-yellow-400 text-lg px-8 py-3 h-auto font-semibold"
+              className="bg-black hover:bg-gray-800 text-yellow-400 text-lg px-8 py-3 h-auto font-bold animate-bounce"
             >
-              Find a Tradesperson
+              🎯 I NEED A TRADESPERSON!
             </Button>
             <Button 
               onClick={() => navigate('/register/tradesperson')}
               variant="outline" 
-              className="border-black text-black hover:bg-black hover:text-yellow-400 text-lg px-8 py-3 h-auto font-semibold"
+              className="border-black text-black hover:bg-black hover:text-yellow-400 text-lg px-8 py-3 h-auto font-bold animate-bounce"
             >
-              Join as a Trade
+              ⚡ I'M A TRADESPERSON!
             </Button>
           </div>
         </div>

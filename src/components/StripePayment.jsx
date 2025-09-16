@@ -91,7 +91,7 @@ export default function StripePayment() {
         <div className="htk-container px-6 py-4">
           <div className="flex items-center justify-center">
             <div className="htk-logo-container">
-              <img src="/htk-logo.png" alt="HTK Logo" className="h-10 w-10" />
+              <img src="/htk-logo-large.png" alt="HTK Logo" className="h-16 w-16" />
               <span className="htk-logo-text">HANDY TO KNOW</span>
             </div>
           </div>

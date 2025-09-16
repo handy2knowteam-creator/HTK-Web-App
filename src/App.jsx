@@ -3,11 +3,16 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css'
 
 // Components
-import LandingPage from './components/LandingPage'
+import LandingPage from './components/LandingPageSimple'
 import LoginScreen from './components/LoginScreen'
 import RegisterScreen from './components/RegisterScreen'
 import CustomerDashboard from './components/CustomerDashboard'
 import TradespersonDashboard from './components/TradespersonDashboard'
+import ComingSoon from './components/ComingSoon'
+import TermsOfService from './components/TermsOfService'
+import PrivacyPolicy from './components/PrivacyPolicy'
+import CommunityGuidelines from './components/CommunityGuidelines'
+import SupportPage from './components/SupportPage'
 
 // Context
 import { AuthProvider, useAuth } from './contexts/AuthContext'
@@ -17,10 +22,18 @@ function AppContent() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+      <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-center">
+          <div className="htk-logo-container justify-center mb-6">
+            <img 
+              src="/htk-logo-large.png" 
+              alt="HTK Logo" 
+              className="htk-logo-luxury htk-logo-large animate-pulse"
+              style={{ height: '80px', width: 'auto' }}
+            />
+          </div>
           <div className="w-16 h-16 border-4 border-yellow-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-yellow-500 text-lg">Loading HTK...</p>
+          <p className="htk-text-luxury text-lg">Loading HTK Platform...</p>
         </div>
       </div>
     )
@@ -28,7 +41,7 @@ function AppContent() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gray-900">
+      <div className="min-h-screen bg-black">
         <Routes>
           {!user ? (
             // Unauthenticated routes
@@ -36,16 +49,33 @@ function AppContent() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/login/:userType" element={<LoginScreen />} />
               <Route path="/register/:userType" element={<RegisterScreen />} />
+              <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/community-guidelines" element={<CommunityGuidelines />} />
+              <Route path="/support" element={<SupportPage />} />
+              <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
           ) : (
             // Authenticated routes
             <>
-              {user.user_type === 'customer' ? (
-                <Route path="/*" element={<CustomerDashboard />} />
+              {user.userType === 'customer' ? (
+                <>
+                  <Route path="/dashboard" element={<CustomerDashboard />} />
+                  <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                </>
               ) : (
-                <Route path="/*" element={<TradespersonDashboard />} />
+                <>
+                  <Route path="/dashboard" element={<TradespersonDashboard />} />
+                  <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                </>
               )}
+              <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/community-guidelines" element={<CommunityGuidelines />} />
+              <Route path="/support" element={<SupportPage />} />
+              <Route path="/coming-soon" element={<ComingSoon />} />
+              <Route path="*" element={<Navigate to="/dashboard" replace />} />
             </>
           )}
         </Routes>

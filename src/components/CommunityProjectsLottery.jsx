@@ -177,7 +177,7 @@ export default function CommunityProjectsLottery() {
         <div className="htk-container px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="htk-logo-container">
-              <img src="/htk-logo.png" alt="HTK Logo" className="h-10 w-10" />
+              <img src="/htk-logo-large.png" alt="HTK Logo" className="h-16 w-16" />
               <span className="htk-logo-text">HANDY TO KNOW</span>
             </div>
             <div className="flex items-center space-x-4">
@@ -195,7 +195,7 @@ export default function CommunityProjectsLottery() {
         <div className="text-center mb-12">
           <div className="flex justify-center mb-6">
             <div className="bg-gradient-to-br from-htk-gold to-htk-gold-dark rounded-full p-4">
-              <Gift className="h-12 w-12 text-black" />
+              <Gift className="h-20 w-20 text-black" />
             </div>
           </div>
           <h1 className="text-4xl font-bold text-htk-gold mb-4">Community Projects Lottery</h1>
