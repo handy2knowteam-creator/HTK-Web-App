@@ -50,6 +50,24 @@ export default function SubscriptionManager() {
   const fetchAvailablePackages = async () => {
     const packages = [
       {
+        id: 'free_trial',
+        name: 'Free Trial',
+        credits: 5,
+        price: 0,
+        interval: 'trial',
+        popular: false,
+        features: [
+          '5 free credits to start',
+          'Test the platform',
+          'All job categories',
+          'Basic support',
+          '7-day credit validity',
+          'No payment required'
+        ],
+        icon: <Gift className="h-6 w-6" />,
+        color: 'border-green-500 bg-green-900/20'
+      },
+      {
         id: 'bronze',
         name: 'Bronze',
         credits: 10,
@@ -61,7 +79,7 @@ export default function SubscriptionManager() {
           '£0.99 per credit',
           'Basic support',
           'Standard job access',
-          '30-day credit validity'
+          'Credits never expire'
         ],
         icon: <Zap className="h-6 w-6" />,
         color: 'border-amber-500 bg-amber-900/20'
@@ -78,7 +96,7 @@ export default function SubscriptionManager() {
           '£0.71 per credit',
           'Priority support',
           'All job categories',
-          '60-day credit validity',
+          'Credits never expire',
           'Portfolio showcase'
         ],
         icon: <Star className="h-6 w-6" />,
@@ -96,7 +114,7 @@ export default function SubscriptionManager() {
           '£0.62 per credit',
           '24/7 priority support',
           'Premium job access',
-          '90-day credit validity',
+          'Credits never expire',
           'Featured profile',
           'Advanced analytics'
         ],
@@ -115,7 +133,7 @@ export default function SubscriptionManager() {
           '£0.50 per credit',
           'Dedicated account manager',
           'Custom integrations',
-          'Unlimited credit validity',
+          'Credits never expire',
           'White-label options',
           'Advanced reporting'
         ],

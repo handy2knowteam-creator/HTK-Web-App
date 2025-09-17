@@ -26,7 +26,7 @@ export default function CreditPackages() {
         '£0.99 per credit',
         'Occasional jobs covered',
         'Top-up anytime for £1/credit',
-        '30-day validity'
+        'Credits never expire'
       ]
     },
     {
@@ -46,7 +46,7 @@ export default function CreditPackages() {
         'Steady stream of work',
         'Best for steady work — 7x the credits of Bronze at just 5x the price',
         'Flexible growth, week after week',
-        '60-day validity'
+        'Credits never expire'
       ]
     },
     {
@@ -66,7 +66,7 @@ export default function CreditPackages() {
         'High-volume, maximum value',
         'Ultimate value — 16x the credits of Bronze at just 10x the price',
         'For pros ready to scale fast',
-        '90-day validity'
+        'Credits never expire'
       ]
     },
     {
