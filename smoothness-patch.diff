@@ -1,0 +1,80 @@
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..a1b2c3d
+--- /dev/null
++++ b/.gitignore
+@@
++node_modules/
++dist/
++build/
++.DS_Store
++
+diff --git a/netlify.toml b/netlify.toml
+new file mode 100644
+index 0000000..b2c3d4e
+--- /dev/null
++++ b/netlify.toml
+@@
++[build]
++  command = "npm run build"
++  publish = "dist"
++
++[[headers]]
++  for = "/*"
++  [headers.values]
++    Cache-Control = "public, max-age=31536000, immutable"
++
+diff --git a/index.html b/index.html
+index e69de29..c4d5e6f 100644
+--- a/index.html
++++ b/index.html
+@@ -10,7 +10,7 @@
+   <body>
+-    <script type="module" src="/src/main.jsx"></script>
++    <script type="module" src="/src/main.jsx" defer></script>
+   </body>
+ </html>
+ 
+diff --git a/src/main.jsx b/src/main.jsx
+index abc1234..def5678 100644
+--- a/src/main.jsx
++++ b/src/main.jsx
+@@
++// Lazy loading for images
++document.addEventListener("DOMContentLoaded", () => {
++  const lazyImgs = document.querySelectorAll("img.lazy");
++  if ("IntersectionObserver" in window) {
++    const observer = new IntersectionObserver(entries => {
++      entries.forEach(e => {
++        if (e.isIntersecting) {
++          const img = e.target;
++          if (img.dataset.src) {
++            img.src = img.dataset.src;
++          }
++          observer.unobserve(img);
++        }
++      });
++    });
++    lazyImgs.forEach(img => observer.observe(img));
++  } else {
++    lazyImgs.forEach(img => {
++      if (img.dataset.src) img.src = img.dataset.src;
++    });
++  }
++});
++
+diff --git a/src/styles.css b/src/styles.css
+index 123abcd..456efgh 100644
+--- a/src/styles.css
++++ b/src/styles.css
+@@
++/* Mobile UX polish */
++button, a {
++  touch-action: manipulation;
++}
++@media (max-width: 768px) {
++  .nav-links {
++    font-size: 1.1rem;
++    padding: 0.75rem;
++  }
++}
