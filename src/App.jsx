@@ -8,6 +8,8 @@ import LoginScreen from './components/LoginScreen'
 import RegisterScreen from './components/RegisterScreen'
 import CustomerDashboard from './components/CustomerDashboard'
 import TradespersonDashboard from './components/TradespersonDashboard'
+import JobRequestForm from './components/JobRequestForm'
+import SubscriptionManager from './components/SubscriptionManager'
 import ComingSoon from './components/ComingSoon'
 import TermsOfService from './components/TermsOfService'
 import PrivacyPolicy from './components/PrivacyPolicy'
@@ -62,11 +64,13 @@ function AppContent() {
               {user.userType === 'customer' ? (
                 <>
                   <Route path="/dashboard" element={<CustomerDashboard />} />
+                  <Route path="/post-job" element={<JobRequestForm />} />
                   <Route path="/" element={<Navigate to="/dashboard" replace />} />
                 </>
               ) : (
                 <>
                   <Route path="/dashboard" element={<TradespersonDashboard />} />
+                  <Route path="/subscription" element={<SubscriptionManager />} />
                   <Route path="/" element={<Navigate to="/dashboard" replace />} />
                 </>
               )}

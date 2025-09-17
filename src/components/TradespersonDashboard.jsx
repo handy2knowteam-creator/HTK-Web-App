@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { useAuth } from '@/contexts/AuthContext'
 import { Star, Upload, Video, Camera, Youtube, MessageSquare, ThumbsUp } from 'lucide-react'
+import { calculateJobCredits } from '../utils/jobPricing'
 import ComingSoon from './ComingSoon'
 
 // Helper function to extract YouTube video ID
@@ -36,53 +37,112 @@ export default function TradespersonDashboard() {
   }, [])
 
   const fetchJobs = async () => {
-    // Mock data for now with variable credit costs
-    setJobs([
+    // Mock data with automated pricing calculations
+    const mockJobs = [
       {
         id: 1,
         title: 'Kitchen Plumbing Repair',
-        description: 'Need urgent plumbing repair in kitchen sink',
+        description: 'Need urgent plumbing repair in kitchen sink. Tap is leaking and needs immediate attention.',
         location: 'London, UK',
-        budget: '£150-200',
+        budget: '0-200',
         posted: '2 hours ago',
         customer: 'John Smith',
-        credits: 1,
-        urgency: 'Standard'
+        category: 'plumbing',
+        urgency: 'standard',
+        locationType: 'london',
+        complexity: 'basic'
       },
       {
         id: 2,
         title: 'Bathroom Renovation',
-        description: 'Complete bathroom renovation needed',
+        description: 'Complete bathroom renovation needed including new tiles, fixtures, and plumbing work.',
         location: 'Manchester, UK',
-        budget: '£2000-3000',
+        budget: '2500-5000',
         posted: '1 day ago',
         customer: 'Sarah Johnson',
-        credits: 5,
-        urgency: 'High Value'
+        category: 'plumbing',
+        urgency: 'standard',
+        locationType: 'urban',
+        complexity: 'advanced'
       },
       {
         id: 3,
         title: 'Emergency Electrical Repair',
-        description: 'Urgent electrical fault needs immediate attention',
+        description: 'Urgent electrical fault needs immediate attention. Power outage in main circuit.',
         location: 'Birmingham, UK',
-        budget: '£300-500',
+        budget: '200-500',
         posted: '30 minutes ago',
         customer: 'Mike Wilson',
-        credits: 3,
-        urgency: 'Emergency'
+        category: 'electrical',
+        urgency: 'emergency',
+        locationType: 'urban',
+        complexity: 'intermediate'
       },
       {
         id: 4,
         title: 'Garden Landscaping Project',
-        description: 'Complete garden redesign and landscaping',
+        description: 'Complete garden redesign and landscaping with new patio, plants, and water feature.',
         location: 'Leeds, UK',
-        budget: '£5000-8000',
+        budget: '5000-10000',
         posted: '3 hours ago',
         customer: 'Emma Davis',
-        credits: 8,
-        urgency: 'Premium'
+        category: 'landscaping',
+        urgency: 'standard',
+        locationType: 'urban',
+        complexity: 'advanced'
+      },
+      {
+        id: 5,
+        title: 'Kitchen Cabinet Installation',
+        description: 'Professional installation of new kitchen cabinets and worktops.',
+        location: 'Bristol, UK',
+        budget: '1000-2500',
+        posted: '5 hours ago',
+        customer: 'David Brown',
+        category: 'carpentry',
+        urgency: 'standard',
+        locationType: 'urban',
+        complexity: 'intermediate'
+      },
+      {
+        id: 6,
+        title: 'Roof Leak Emergency',
+        description: 'Urgent roof repair needed due to storm damage. Water coming through ceiling.',
+        location: 'Glasgow, UK',
+        budget: '500-1000',
+        posted: '1 hour ago',
+        customer: 'Lisa Wilson',
+        category: 'roofing',
+        urgency: 'emergency',
+        locationType: 'urban',
+        complexity: 'advanced'
       }
-    ])
+    ]
+
+    // Calculate credits for each job using automated pricing
+    const jobsWithCredits = mockJobs.map(job => {
+      const credits = calculateJobCredits({
+        category: job.category,
+        budget: job.budget,
+        urgency: job.urgency,
+        location: job.locationType,
+        complexity: job.complexity
+      })
+
+      // Convert budget range to display format
+      const budgetDisplay = job.budget.includes('-') 
+        ? `£${job.budget.replace('-', ' - £')}` 
+        : `£${job.budget}+`
+
+      return {
+        ...job,
+        credits,
+        budget: budgetDisplay,
+        urgency: job.urgency.charAt(0).toUpperCase() + job.urgency.slice(1).replace('_', ' ')
+      }
+    })
+
+    setJobs(jobsWithCredits)
   }
 
   const fetchCredits = async () => {
