@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react'
+import tempDB from '../utils/tempDatabase'
 
 const AuthContext = createContext()
 
@@ -15,17 +16,16 @@ export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Check for existing user session
-    const savedUser = localStorage.getItem('htkUser')
-    const savedToken = localStorage.getItem('htkToken')
+    // Check for existing user session in temporary database
+    const savedUser = localStorage.getItem('htk_current_user')
     
-    if (savedUser && savedToken) {
+    if (savedUser) {
       try {
-        setUser(JSON.parse(savedUser))
+        const userData = JSON.parse(savedUser)
+        setUser(userData)
       } catch (error) {
         console.error('Error parsing saved user:', error)
-        localStorage.removeItem('htkUser')
-        localStorage.removeItem('htkToken')
+        localStorage.removeItem('htk_current_user')
       }
     }
     setIsLoading(false)
@@ -33,58 +33,69 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await fetch('https://0vhlizcgy3ye.manus.space/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      })
-
-      const data = await response.json()
-
-      if (response.ok) {
-        localStorage.setItem('htkToken', data.token)
-        localStorage.setItem('htkUser', JSON.stringify(data.user))
-        setUser(data.user)
-        return { success: true, user: data.user }
+      // Simulate network delay for realistic UX
+      await new Promise(resolve => setTimeout(resolve, 800))
+      
+      const result = tempDB.authenticateUser(email, password)
+      
+      if (result.success) {
+        const userData = {
+          ...result.user,
+          userType: result.userType
+        }
+        setUser(userData)
+        localStorage.setItem('htk_current_user', JSON.stringify(userData))
+        return { success: true, user: userData }
       } else {
-        return { success: false, error: data.error || 'Login failed' }
+        return { success: false, error: result.message || 'Invalid credentials' }
       }
     } catch (error) {
-      return { success: false, error: 'Network error. Please try again.' }
+      console.error('Login error:', error)
+      return { success: false, error: 'Login failed. Please try again.' }
     }
   }
 
   const register = async (userData) => {
     try {
-      const response = await fetch('https://0vhlizcgy3ye.manus.space/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userData),
-      })
-
-      const data = await response.json()
-
-      if (response.ok) {
-        localStorage.setItem('htkToken', data.token)
-        localStorage.setItem('htkUser', JSON.stringify(data.user))
-        setUser(data.user)
-        return { success: true, user: data.user }
+      // Simulate network delay for realistic UX
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      
+      let result
+      
+      if (userData.userType === 'customer') {
+        result = tempDB.registerCustomer(userData)
+      } else if (userData.userType === 'tradesperson') {
+        result = tempDB.registerTradesperson(userData)
       } else {
-        return { success: false, error: data.error || 'Registration failed' }
+        return { success: false, error: 'Invalid user type' }
+      }
+
+      if (result.success) {
+        const newUser = {
+          ...result[userData.userType],
+          userType: userData.userType
+        }
+        setUser(newUser)
+        localStorage.setItem('htk_current_user', JSON.stringify(newUser))
+        return { success: true, user: newUser }
+      } else {
+        return { success: false, error: 'Registration failed' }
       }
     } catch (error) {
-      return { success: false, error: 'Network error. Please try again.' }
+      console.error('Registration error:', error)
+      return { success: false, error: 'Registration failed. Please try again.' }
     }
   }
 
   const logout = () => {
     setUser(null)
-    localStorage.removeItem('htkUser')
-    localStorage.removeItem('htkToken')
+    localStorage.removeItem('htk_current_user')
+  }
+
+  const updateUser = (updatedData) => {
+    const updatedUser = { ...user, ...updatedData }
+    setUser(updatedUser)
+    localStorage.setItem('htk_current_user', JSON.stringify(updatedUser))
   }
 
   const value = {
@@ -92,7 +103,8 @@ export const AuthProvider = ({ children }) => {
     isLoading,
     login,
     register,
-    logout
+    logout,
+    updateUser
   }
 
   return (

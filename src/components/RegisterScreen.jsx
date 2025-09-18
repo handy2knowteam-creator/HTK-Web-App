@@ -34,20 +34,56 @@ export default function RegisterScreen() {
     setIsLoading(true)
     setError('')
 
+    // Validation
     if (formData.password !== formData.confirmPassword) {
       setError('Passwords do not match')
       setIsLoading(false)
       return
     }
 
+    if (formData.password.length < 6) {
+      setError('Password must be at least 6 characters long')
+      setIsLoading(false)
+      return
+    }
+
+    if (!formData.name || !formData.email || !formData.phone || !formData.location) {
+      setError('Please fill in all required fields')
+      setIsLoading(false)
+      return
+    }
+
+    if (userType === 'tradesperson' && !formData.trade) {
+      setError('Please select your trade')
+      setIsLoading(false)
+      return
+    }
+
     try {
-      await register({
-        ...formData,
-        user_type: userType
-      })
-      // Navigation will be handled by the auth context
+      const registrationData = {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+        phone: formData.phone,
+        location: formData.location,
+        userType: userType
+      }
+
+      // Add trade for tradespeople
+      if (userType === 'tradesperson') {
+        registrationData.trade = formData.trade
+      }
+
+      const result = await register(registrationData)
+      
+      if (result.success) {
+        // Registration successful, user will be redirected by AuthContext
+        navigate('/dashboard')
+      } else {
+        setError(result.error || 'Registration failed')
+      }
     } catch (err) {
-      setError(err.message || 'Registration failed')
+      setError(err.message || 'Registration failed. Please try again.')
     } finally {
       setIsLoading(false)
     }
