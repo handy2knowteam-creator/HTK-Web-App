@@ -17,7 +17,9 @@ import {
   ArrowRight,
   Star,
   Settings,
-  HelpCircle
+  HelpCircle,
+  Search,
+  Plus
 } from 'lucide-react'
 
 export default function NavigationMenu() {
@@ -31,6 +33,8 @@ export default function NavigationMenu() {
       items: [
         { name: 'Find Tradespeople', path: '/register/customer', icon: Users },
         { name: 'Join as Tradesperson', path: '/register/tradesperson', icon: Wrench },
+        { name: 'Browse Jobs', path: '/browse-jobs', icon: Search },
+        { name: 'Post a Job', path: '/post-job', icon: Plus },
         { name: 'How It Works', path: '/coming-soon', icon: Info },
         { name: 'Pricing & Credits', path: '/coming-soon', icon: Star }
       ]
