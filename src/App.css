@@ -5,9 +5,9 @@
 
 /* HTK Real Gold Color Scheme */
 :root {
-  --htk-gold: #D4AF37;
-  --htk-gold-light: #E6C547;
-  --htk-gold-dark: #B8941F;
+  --htk-gold: #B9975B;
+  --htk-gold-light: #C7A66B;
+  --htk-gold-dark: #A0804B;
   --htk-black: #000000;
   --htk-dark-gray: #111111;
   --htk-medium-gray: #222222;
@@ -134,11 +134,11 @@
 
 /* Enhanced color palette for luxury feel */
 :root {
-  --htk-gold-primary: #DAA520;
-  --htk-gold-light: #F4E4BC;
-  --htk-gold-dark: #B8860B;
-  --htk-gold-accent: #FFD700;
-  --htk-gold-metallic: #E6C200;
+  --htk-gold-primary: #B9975B;
+  --htk-gold-light: #C7A66B;
+  --htk-gold-dark: #A0804B;
+  --htk-gold-accent: #B9975B;
+  --htk-gold-metallic: #B9975B;
   --htk-black-primary: #000000;
   --htk-black-secondary: #0a0a0a;
   --htk-black-tertiary: #1a1a1a;
@@ -151,8 +151,8 @@ body {
   background-image: 
     radial-gradient(circle at 25% 25%, var(--htk-black-tertiary) 0%, transparent 50%),
     radial-gradient(circle at 75% 75%, var(--htk-black-secondary) 0%, transparent 50%),
-    linear-gradient(45deg, transparent 40%, rgba(218, 165, 32, 0.03) 50%, transparent 60%),
-    linear-gradient(135deg, transparent 30%, rgba(255, 215, 0, 0.02) 70%);
+    linear-gradient(45deg, transparent 40%, rgba(185, 151, 91, 0.03) 50%, transparent 60%),
+    linear-gradient(135deg, transparent 30%, rgba(185, 151, 91, 0.02) 70%);
   background-size: 600px 600px, 400px 400px, 300px 300px, 800px 800px;
   background-position: 0 0, 200px 200px, 100px 100px, 300px 300px;
   min-height: 100vh;
@@ -179,7 +179,7 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 30px rgba(218, 165, 32, 0.4);
+  text-shadow: 0 0 30px rgba(185, 151, 91, 0.4);
   font-weight: 700;
   letter-spacing: 0.02em;
 }
@@ -193,8 +193,8 @@ body {
   font-weight: 600;
   font-size: 0.875rem;
   box-shadow: 
-    0 4px 20px rgba(218, 165, 32, 0.4),
-    0 0 40px rgba(255, 215, 0, 0.2),
+    0 4px 20px rgba(185, 151, 91, 0.4),
+    0 0 40px rgba(185, 151, 91, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
@@ -226,17 +226,17 @@ body {
     var(--htk-gray-luxury) 75%, 
     var(--htk-black-tertiary) 100%);
   background-image: 
-    radial-gradient(circle at 20% 80%, rgba(218, 165, 32, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
-    linear-gradient(45deg, transparent 48%, rgba(218, 165, 32, 0.02) 52%);
+    radial-gradient(circle at 20% 80%, rgba(185, 151, 91, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(185, 151, 91, 0.05) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 48%, rgba(185, 151, 91, 0.02) 52%);
   border: 2px solid transparent;
   background-clip: padding-box;
   position: relative;
   backdrop-filter: blur(20px);
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(218, 165, 32, 0.15),
-    inset 0 1px 0 rgba(255, 215, 0, 0.1);
+    0 0 20px rgba(185, 151, 91, 0.15),
+    inset 0 1px 0 rgba(185, 151, 91, 0.1);
 }
 
 .htk-card-luxury::before {
@@ -254,8 +254,8 @@ body {
 .htk-card-luxury:hover {
   box-shadow: 
     0 12px 40px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(218, 165, 32, 0.25),
-    inset 0 1px 0 rgba(255, 215, 0, 0.2);
+    0 0 30px rgba(185, 151, 91, 0.25),
+    inset 0 1px 0 rgba(185, 151, 91, 0.2);
   transform: translateY(-2px);
   transition: all 0.3s ease;
 }
@@ -271,8 +271,8 @@ body {
   position: relative;
   overflow: hidden;
   box-shadow: 
-    0 6px 25px rgba(218, 165, 32, 0.4),
-    0 0 20px rgba(255, 215, 0, 0.2),
+    0 6px 25px rgba(185, 151, 91, 0.4),
+    0 0 20px rgba(185, 151, 91, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.3),
     inset 0 -1px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -292,8 +292,8 @@ body {
 .htk-btn-luxury:hover {
   background: linear-gradient(135deg, var(--htk-gold-accent) 0%, var(--htk-gold-metallic) 100%);
   box-shadow: 
-    0 8px 35px rgba(218, 165, 32, 0.6),
-    0 0 30px rgba(255, 215, 0, 0.3),
+    0 8px 35px rgba(185, 151, 91, 0.6),
+    0 0 30px rgba(185, 151, 91, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.4);
   transform: translateY(-3px);
 }
@@ -305,9 +305,9 @@ body {
 /* Premium logo enhancement with luxury glow */
 .htk-logo-luxury {
   filter: 
-    drop-shadow(0 0 20px rgba(218, 165, 32, 0.5)) 
-    drop-shadow(0 0 40px rgba(255, 215, 0, 0.3))
-    drop-shadow(0 0 60px rgba(218, 165, 32, 0.1));
+    drop-shadow(0 0 20px rgba(185, 151, 91, 0.5)) 
+    drop-shadow(0 0 40px rgba(185, 151, 91, 0.3))
+    drop-shadow(0 0 60px rgba(185, 151, 91, 0.1));
   transition: all 0.4s ease;
   position: relative;
 }
@@ -316,7 +316,7 @@ body {
   content: '';
   position: absolute;
   inset: -10px;
-  background: radial-gradient(circle, rgba(218, 165, 32, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(185, 151, 91, 0.2) 0%, transparent 70%);
   border-radius: 50%;
   z-index: -1;
   animation: logoGlow 4s ease-in-out infinite alternate;
@@ -335,9 +335,9 @@ body {
 
 .htk-logo-luxury:hover {
   filter: 
-    drop-shadow(0 0 30px rgba(218, 165, 32, 0.7)) 
-    drop-shadow(0 0 60px rgba(255, 215, 0, 0.5))
-    drop-shadow(0 0 90px rgba(218, 165, 32, 0.2));
+    drop-shadow(0 0 30px rgba(185, 151, 91, 0.7)) 
+    drop-shadow(0 0 60px rgba(185, 151, 91, 0.5))
+    drop-shadow(0 0 90px rgba(185, 151, 91, 0.2));
   transform: scale(1.05);
 }
 
@@ -359,7 +359,7 @@ body {
   border-radius: 1rem;
   font-size: 0.75rem;
   font-weight: 700;
-  box-shadow: 0 2px 10px rgba(218, 165, 32, 0.4);
+  box-shadow: 0 2px 10px rgba(185, 151, 91, 0.4);
 }
 
 /* Luxury header styling */
@@ -369,7 +369,7 @@ body {
     var(--htk-black-tertiary) 50%, 
     var(--htk-black-primary) 100%);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(218, 165, 32, 0.3);
+  border-bottom: 1px solid rgba(185, 151, 91, 0.3);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -400,7 +400,7 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 20px rgba(218, 165, 32, 0.3);
+  text-shadow: 0 0 20px rgba(185, 151, 91, 0.3);
 }
 
 .htk-stat-label {
@@ -431,14 +431,14 @@ body {
 
 /* Premium Logo Enhancement */
 .htk-logo-premium {
-  filter: drop-shadow(0 0 20px rgba(218, 165, 32, 0.4)) 
-          drop-shadow(0 0 40px rgba(218, 165, 32, 0.2));
+  filter: drop-shadow(0 0 20px rgba(185, 151, 91, 0.4)) 
+          drop-shadow(0 0 40px rgba(185, 151, 91, 0.2));
   transition: all 0.3s ease;
 }
 
 .htk-logo-premium:hover {
-  filter: drop-shadow(0 0 30px rgba(218, 165, 32, 0.6)) 
-          drop-shadow(0 0 60px rgba(218, 165, 32, 0.3));
+  filter: drop-shadow(0 0 30px rgba(185, 151, 91, 0.6)) 
+          drop-shadow(0 0 60px rgba(185, 151, 91, 0.3));
   transform: scale(1.05);
 }
 
@@ -487,31 +487,31 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 20px rgba(218, 165, 32, 0.3);
+  text-shadow: 0 0 20px rgba(185, 151, 91, 0.3);
 }
 
 /* Premium glow effects */
 .htk-glow-gold {
   box-shadow: 
-    0 0 20px rgba(218, 165, 32, 0.3),
-    0 0 40px rgba(218, 165, 32, 0.1),
-    inset 0 0 20px rgba(218, 165, 32, 0.05);
+    0 0 20px rgba(185, 151, 91, 0.3),
+    0 0 40px rgba(185, 151, 91, 0.1),
+    inset 0 0 20px rgba(185, 151, 91, 0.05);
 }
 
 /* Enhanced card styling */
 .htk-card-premium {
   background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
   background-image: 
-    radial-gradient(circle at 30% 70%, rgba(218, 165, 32, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 70% 30%, rgba(218, 165, 32, 0.05) 0%, transparent 50%);
-  border: 1px solid rgba(218, 165, 32, 0.25);
+    radial-gradient(circle at 30% 70%, rgba(185, 151, 91, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(185, 151, 91, 0.05) 0%, transparent 50%);
+  border: 1px solid rgba(185, 151, 91, 0.25);
   backdrop-filter: blur(10px);
 }
 
 .htk-card-premium:hover {
-  border-color: rgba(218, 165, 32, 0.4);
+  border-color: rgba(185, 151, 91, 0.4);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
-              0 0 20px rgba(218, 165, 32, 0.2);
+              0 0 20px rgba(185, 151, 91, 0.2);
 }
 
 
@@ -602,3 +602,139 @@ body {
   box-shadow: 0 4px 15px rgba(185, 151, 91, 0.3);
 }
 
+
+/* Additional HTK Utility Classes */
+.htk-btn-gold {
+  background: linear-gradient(45deg, var(--htk-gold-dark), var(--htk-gold), var(--htk-gold-dark));
+  color: var(--htk-black);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.htk-btn-gold:hover {
+  background: linear-gradient(45deg, #8C6A3C, var(--htk-gold-light), #8C6A3C);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(185, 151, 91, 0.3);
+}
+
+.htk-text-professional {
+  color: #e5e7eb;
+}
+
+.htk-text-muted {
+  color: #9ca3af;
+}
+
+.htk-card {
+  background: var(--htk-dark-gray);
+  border: 1px solid rgba(185, 151, 91, 0.2);
+  border-radius: 8px;
+}
+
+.htk-header {
+  background: linear-gradient(135deg, var(--htk-black) 0%, var(--htk-dark-gray) 100%);
+  border-bottom: 1px solid rgba(185, 151, 91, 0.3);
+}
+
+.htk-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.htk-logo-text {
+  color: var(--htk-gold);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+/* Override any remaining yellow/gold inconsistencies */
+.text-yellow-500,
+.text-yellow-400,
+.text-yellow-600,
+.border-yellow-500,
+.border-yellow-400,
+.border-yellow-600,
+.bg-yellow-500,
+.bg-yellow-400,
+.bg-yellow-600 {
+  color: var(--htk-gold) !important;
+  border-color: var(--htk-gold) !important;
+  background-color: var(--htk-gold) !important;
+}
+
+/* Ensure proper gold color for Tailwind classes */
+.text-htk-gold {
+  color: var(--htk-gold) !important;
+}
+
+.bg-htk-gold {
+  background-color: var(--htk-gold) !important;
+}
+
+.border-htk-gold {
+  border-color: var(--htk-gold) !important;
+}
+
+.htk-gold-accent {
+  color: var(--htk-gold-light) !important;
+}
+
+/* Form styling consistency */
+.htk-form-container {
+  background: var(--htk-dark-gray);
+  border: 1px solid rgba(185, 151, 91, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.htk-input {
+  background-color: var(--htk-medium-gray);
+  color: var(--htk-gold);
+  border: 1px solid var(--htk-gold);
+  border-radius: 6px;
+  padding: 12px 16px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.htk-input:focus {
+  outline: none;
+  border-color: var(--htk-gold-light);
+  box-shadow: 0 0 10px rgba(185, 151, 91, 0.3);
+}
+
+.htk-label {
+  color: var(--htk-gold);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Navigation menu styling */
+.htk-nav-item {
+  color: #e5e7eb;
+  transition: color 0.3s ease;
+}
+
+.htk-nav-item:hover {
+  color: var(--htk-gold);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .htk-form-container {
+    padding: 1.5rem;
+  }
+  
+  .htk-btn-luxury,
+  .htk-btn-real-gold,
+  .htk-btn-gold {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

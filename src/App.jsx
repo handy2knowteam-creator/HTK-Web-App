@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css'
 
 // Components
-import LandingPage from './components/LandingPageSimple'
+import LandingPage from './components/LandingPageDeployment'
 import LoginScreen from './components/LoginScreen'
 import RegisterScreen from './components/RegisterScreen'
 import CustomerDashboard from './components/CustomerDashboard'
@@ -19,6 +19,10 @@ import TermsOfService from './components/TermsOfService'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import CommunityGuidelines from './components/CommunityGuidelines'
 import SupportPage from './components/SupportPage'
+import HowItWorks from './components/HowItWorks'
+import AboutHTK from './components/AboutHTK'
+import PricingCredits from './components/PricingCredits'
+import ThankYouSimple from './components/ThankYouSimple'
 
 // Context
 import { AuthProvider, useAuth } from './contexts/AuthContext'
@@ -60,6 +64,10 @@ function AppContent() {
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/community-guidelines" element={<CommunityGuidelines />} />
               <Route path="/support" element={<SupportPage />} />
+              <Route path="/how-it-works" element={<HowItWorks />} />
+              <Route path="/about" element={<AboutHTK />} />
+              <Route path="/pricing" element={<PricingCredits />} />
+              <Route path="/thank-you" element={<ThankYouSimple />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
@@ -87,6 +95,10 @@ function AppContent() {
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/community-guidelines" element={<CommunityGuidelines />} />
               <Route path="/support" element={<SupportPage />} />
+              <Route path="/how-it-works" element={<HowItWorks />} />
+              <Route path="/about" element={<AboutHTK />} />
+              <Route path="/pricing" element={<PricingCredits />} />
+              <Route path="/thank-you" element={<ThankYouSimple />} />
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/dashboard" replace />} />

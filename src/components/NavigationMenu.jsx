@@ -35,15 +35,15 @@ export default function NavigationMenu() {
         { name: 'Join as Tradesperson', path: '/register/tradesperson', icon: Wrench },
         { name: 'Browse Jobs', path: '/browse-jobs', icon: Search },
         { name: 'Post a Job', path: '/post-job', icon: Plus },
-        { name: 'How It Works', path: '/coming-soon', icon: Info },
-        { name: 'Pricing & Credits', path: '/coming-soon', icon: Star }
+        { name: 'How It Works', path: '/how-it-works', icon: Info },
+        { name: 'Pricing & Credits', path: '/pricing', icon: Star }
       ]
     },
     {
       title: 'Information',
       icon: BookOpen,
       items: [
-        { name: 'About HTK', path: '/coming-soon', icon: Info },
+        { name: 'About HTK', path: '/about', icon: Info },
         { name: 'Platform Features', path: '/coming-soon', icon: Settings },
         { name: 'Success Stories', path: '/coming-soon', icon: Star },
         { name: 'FAQ', path: '/coming-soon', icon: HelpCircle }
