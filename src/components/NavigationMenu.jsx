@@ -50,6 +50,7 @@ export default function NavigationMenu() {
         { name: 'Trade Collaboration', path: '/trade-collaboration', icon: Users },
         { name: 'Tradesperson of the Month', path: '/tradesperson-of-the-month', icon: Award },
         { name: 'Product Showcase', path: '/products', icon: ShoppingCart },
+        { name: 'Investment & Partnership', path: '/investment-partnership', icon: TrendingUp },
         { name: 'FAQ', path: '/coming-soon', icon: HelpCircle }
       ]
     },

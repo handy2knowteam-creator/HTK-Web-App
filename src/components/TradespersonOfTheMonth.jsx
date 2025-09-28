@@ -7,76 +7,16 @@ export default function TradespersonOfTheMonth() {
   const [selectedRegion, setSelectedRegion] = useState('uk')
   const [selectedCategory, setSelectedCategory] = useState('overall')
 
-  // Mock data for current winners
+  // Current state - no winners yet as platform is launching
   const currentWinners = {
     uk: {
-      overall: {
-        name: "James Mitchell",
-        trade: "Electrician",
-        location: "Manchester, UK",
-        avatar: "/tradesperson-1.jpg",
-        overallRating: 9.8,
-        ratings: {
-          timeKeeping: 9.9,
-          jobQuality: 9.8,
-          pricing: 9.7,
-          communication: 9.8,
-          cleanliness: 9.9,
-          professionalism: 9.8
-        },
-        completedJobs: 127,
-        customerReviews: 89,
-        joinedDate: "January 2024",
-        specialties: ["Domestic Electrical", "Commercial Wiring", "Smart Home Installation"],
-        achievements: ["5-Star Rating Champion", "Customer Favorite", "Quality Excellence"],
-        monthlyEarnings: "£8,500",
-        testimonial: "James consistently delivers exceptional work with perfect timing. His attention to detail and professional approach makes him stand out among all tradespeople."
-      }
+      overall: null // No winner yet - platform launching
     },
-    counties: {
-      manchester: {
-        name: "Sarah Thompson",
-        trade: "Plumber", 
-        location: "Manchester",
-        overallRating: 9.7,
-        completedJobs: 89
-      },
-      birmingham: {
-        name: "David Wilson",
-        trade: "Carpenter",
-        location: "Birmingham", 
-        overallRating: 9.6,
-        completedJobs: 76
-      },
-      london: {
-        name: "Maria Garcia",
-        trade: "Decorator",
-        location: "London",
-        overallRating: 9.8,
-        completedJobs: 134
-      }
-    }
+    counties: {} // No county winners yet
   }
 
-  // Mock data for yearly winners
-  const yearlyWinners = [
-    {
-      year: 2025,
-      name: "Robert Clarke",
-      trade: "Builder",
-      location: "Leeds, UK",
-      overallRating: 9.9,
-      achievements: ["UK Tradesperson of the Year", "Excellence in Construction", "Customer Champion"]
-    },
-    {
-      year: 2024,
-      name: "Emma Johnson", 
-      trade: "Electrician",
-      location: "Bristol, UK",
-      overallRating: 9.8,
-      achievements: ["UK Tradesperson of the Year", "Innovation Award", "Safety Excellence"]
-    }
-  ]
+  // No yearly winners yet - platform is new
+  const yearlyWinners = []
 
   const ratingCategories = [
     { key: 'overall', name: 'Overall Excellence', icon: Crown },
@@ -200,158 +140,75 @@ export default function TradespersonOfTheMonth() {
         </div>
       </section>
 
-      {/* Current Winner Showcase */}
+      {/* Current Winner Showcase - Empty State */}
       <section className="py-16 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto">
             <div className="htk-card-luxury p-8 text-center">
-              {/* Winner Badge */}
+              {/* Empty State */}
               <div className="flex items-center justify-center mb-6">
-                <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-6 py-3 rounded-full font-bold text-lg">
+                <div className="bg-gradient-to-r from-gray-600 to-gray-500 text-white px-6 py-3 rounded-full font-bold text-lg">
                   <Crown className="inline h-6 w-6 mr-2" />
                   {selectedRegion === 'uk' ? 'UK' : 'County'} Winner - {new Date().toLocaleDateString('en-GB', { month: 'long' })}
                 </div>
               </div>
 
-              {/* Winner Profile */}
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <div className="w-48 h-48 bg-gray-700 rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <Hammer className="h-24 w-24 text-yellow-500" />
-                  </div>
-                  <h2 className="htk-text-luxury text-3xl font-bold mb-2">{currentWinner.name}</h2>
-                  <p className="text-yellow-500 text-xl font-semibold mb-2">{currentWinner.trade}</p>
-                  <div className="flex items-center justify-center text-gray-400 mb-4">
-                    <MapPin className="h-4 w-4 mr-2" />
-                    {currentWinner.location}
-                  </div>
-                  
-                  {/* Overall Rating */}
-                  <div className="flex items-center justify-center mb-6">
-                    <Star className="h-8 w-8 text-yellow-500 fill-current mr-2" />
-                    <span className="text-4xl font-bold htk-text-luxury">{currentWinner.overallRating}</span>
-                    <span className="text-gray-400 ml-2">/10</span>
+              {/* Empty State Content */}
+              <div className="text-center py-12">
+                <div className="w-48 h-48 bg-gray-700 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <Crown className="h-24 w-24 text-gray-500" />
+                </div>
+                <h2 className="htk-text-luxury text-3xl font-bold mb-4">Your Excellence Could Be Here</h2>
+                <p className="text-gray-300 text-xl mb-6">
+                  HTK is launching! Be among the first tradespeople to join and compete for recognition.
+                </p>
+                <div className="bg-gray-800 p-6 rounded-lg mb-6">
+                  <h3 className="text-yellow-500 font-semibold mb-3">How to Become Tradesperson of the Month:</h3>
+                  <div className="space-y-2 text-gray-300">
+                    <p>• Join HTK as a verified tradesperson</p>
+                    <p>• Complete jobs with excellent customer service</p>
+                    <p>• Maintain high ratings for time keeping, quality, and professionalism</p>
+                    <p>• Winners automatically receive 50 credits + recognition</p>
                   </div>
                 </div>
-
-                <div className="text-left">
-                  {/* Detailed Ratings */}
-                  {selectedRegion === 'uk' && (
-                    <div className="space-y-4 mb-6">
-                      <h3 className="htk-text-luxury text-xl font-semibold mb-4">Detailed Ratings</h3>
-                      {Object.entries(currentWinner.ratings).map(([key, rating]) => {
-                        const category = ratingCategories.find(cat => cat.key === key)
-                        return (
-                          <div key={key} className="flex items-center justify-between">
-                            <div className="flex items-center">
-                              {category && <category.icon className="h-4 w-4 text-yellow-500 mr-2" />}
-                              <span className="text-gray-300">{category?.name || key}</span>
-                            </div>
-                            <div className="flex items-center">
-                              <div className="w-24 bg-gray-700 rounded-full h-2 mr-3">
-                                <div 
-                                  className="bg-yellow-500 h-2 rounded-full" 
-                                  style={{ width: `${(rating / 10) * 100}%` }}
-                                ></div>
-                              </div>
-                              <span className="text-yellow-500 font-semibold w-8">{rating}</span>
-                            </div>
-                          </div>
-                        )
-                      })}
-                    </div>
-                  )}
-
-                  {/* Stats */}
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="bg-gray-800 p-4 rounded-lg text-center">
-                      <div className="text-2xl font-bold htk-text-luxury">{currentWinner.completedJobs}</div>
-                      <div className="text-gray-400 text-sm">Jobs Completed</div>
-                    </div>
-                    {selectedRegion === 'uk' && (
-                      <div className="bg-gray-800 p-4 rounded-lg text-center">
-                        <div className="text-2xl font-bold htk-text-luxury">{currentWinner.customerReviews}</div>
-                        <div className="text-gray-400 text-sm">Customer Reviews</div>
-                      </div>
-                    )}
-                  </div>
-                </div>
+                <button 
+                  onClick={() => navigate('/register/tradesperson')}
+                  className="htk-btn-luxury px-8 py-4 text-lg"
+                >
+                  Join HTK & Compete for Recognition
+                </button>
               </div>
-
-              {/* Winner Rewards */}
-              {selectedRegion === 'uk' && (
-                <div className="mt-8 p-6 bg-gradient-to-r from-yellow-900/20 to-yellow-700/20 border border-yellow-500/30 rounded-lg">
-                  <h3 className="htk-text-luxury text-xl font-semibold mb-4">Monthly Rewards Earned</h3>
-                  <div className="grid md:grid-cols-3 gap-4">
-                    <div className="flex items-center justify-center">
-                      <Gift className="h-8 w-8 text-yellow-500 mr-3" />
-                      <div>
-                        <div className="font-bold">50 Bonus Credits</div>
-                        <div className="text-gray-400 text-sm">Platform Credits</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-center">
-                      <Award className="h-8 w-8 text-yellow-500 mr-3" />
-                      <div>
-                        <div className="font-bold">Winner Badge</div>
-                        <div className="text-gray-400 text-sm">Profile Recognition</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-center">
-                      <TrendingUp className="h-8 w-8 text-yellow-500 mr-3" />
-                      <div>
-                        <div className="font-bold">Featured Listing</div>
-                        <div className="text-gray-400 text-sm">Priority Placement</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Customer Testimonial */}
-              {selectedRegion === 'uk' && currentWinner.testimonial && (
-                <div className="mt-8 p-6 bg-gray-800 rounded-lg">
-                  <h3 className="htk-text-luxury text-lg font-semibold mb-3">Customer Testimonial</h3>
-                  <blockquote className="text-gray-300 italic text-lg">
-                    "{currentWinner.testimonial}"
-                  </blockquote>
-                </div>
-              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* County Winners Grid */}
+      {/* County Winners Grid - Empty State */}
       {selectedRegion === 'counties' && (
         <section className="py-16 px-4">
           <div className="container mx-auto">
             <h2 className="htk-text-luxury text-3xl font-bold mb-8 text-center">County Winners</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {Object.entries(currentWinners.counties).map(([county, winner]) => (
-                <div key={county} className="htk-card-luxury p-6 text-center">
-                  <div className="w-24 h-24 bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <Hammer className="h-12 w-12 text-yellow-500" />
-                  </div>
-                  <h3 className="htk-text-luxury text-xl font-semibold mb-2">{winner.name}</h3>
-                  <p className="text-yellow-500 font-semibold mb-2">{winner.trade}</p>
-                  <div className="flex items-center justify-center text-gray-400 mb-3">
-                    <MapPin className="h-4 w-4 mr-1" />
-                    {winner.location}
-                  </div>
-                  <div className="flex items-center justify-center mb-3">
-                    <Star className="h-5 w-5 text-yellow-500 fill-current mr-1" />
-                    <span className="font-bold">{winner.overallRating}/10</span>
-                  </div>
-                  <p className="text-gray-400 text-sm">{winner.completedJobs} jobs completed</p>
-                </div>
-              ))}
+            <div className="htk-card-luxury p-12 text-center">
+              <Crown className="h-24 w-24 text-gray-500 mx-auto mb-6" />
+              <h3 className="htk-text-luxury text-2xl font-bold mb-4">County Recognition Coming Soon</h3>
+              <p className="text-gray-300 text-lg mb-6">
+                Once we have enough tradespeople in each county, we'll start recognizing the best in your local area.
+              </p>
+              <p className="text-gray-400 mb-8">
+                Be among the first to join in your county and compete for local recognition!
+              </p>
+              <button 
+                onClick={() => navigate('/register/tradesperson')}
+                className="htk-btn-luxury px-8 py-3"
+              >
+                Join Your County Competition
+              </button>
             </div>
           </div>
         </section>
       )}
 
-      {/* Yearly Winners */}
+      {/* Yearly Winners - Empty State */}
       <section className="py-16 px-4 bg-gray-900">
         <div className="container mx-auto">
           <h2 className="htk-text-luxury text-3xl font-bold mb-8 text-center">
@@ -362,41 +219,21 @@ export default function TradespersonOfTheMonth() {
             The ultimate recognition for exceptional tradespeople who consistently deliver outstanding service throughout the year.
           </p>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            {yearlyWinners.map((winner) => (
-              <div key={winner.year} className="htk-card-luxury p-8">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="htk-text-luxury text-2xl font-bold">{winner.year} Winner</h3>
-                  <Trophy className="h-8 w-8 text-yellow-500" />
-                </div>
-                
-                <div className="text-center mb-6">
-                  <div className="w-32 h-32 bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <Crown className="h-16 w-16 text-yellow-500" />
-                  </div>
-                  <h4 className="htk-text-luxury text-xl font-semibold mb-2">{winner.name}</h4>
-                  <p className="text-yellow-500 font-semibold mb-2">{winner.trade}</p>
-                  <div className="flex items-center justify-center text-gray-400 mb-4">
-                    <MapPin className="h-4 w-4 mr-2" />
-                    {winner.location}
-                  </div>
-                  <div className="flex items-center justify-center">
-                    <Star className="h-6 w-6 text-yellow-500 fill-current mr-2" />
-                    <span className="text-2xl font-bold htk-text-luxury">{winner.overallRating}/10</span>
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <h5 className="text-yellow-500 font-semibold">Achievements:</h5>
-                  {winner.achievements.map((achievement, index) => (
-                    <div key={index} className="flex items-center text-gray-300">
-                      <Award className="h-4 w-4 text-yellow-500 mr-2" />
-                      {achievement}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+          <div className="htk-card-luxury p-12 text-center">
+            <Trophy className="h-24 w-24 text-gray-500 mx-auto mb-6" />
+            <h3 className="htk-text-luxury text-2xl font-bold mb-4">Annual Recognition Awaits</h3>
+            <p className="text-gray-300 text-lg mb-6">
+              The first "Tradesperson of the Year" will be crowned in December 2025, based on consistent excellence throughout the year.
+            </p>
+            <p className="text-gray-400 mb-8">
+              Join now and work towards becoming HTK's first annual champion!
+            </p>
+            <button 
+              onClick={() => navigate('/register/tradesperson')}
+              className="htk-btn-luxury px-8 py-3"
+            >
+              Start Your Journey to Excellence
+            </button>
           </div>
         </div>
       </section>

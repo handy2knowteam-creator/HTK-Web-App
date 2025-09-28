@@ -19,10 +19,10 @@ export default function LandingPageSimple() {
   }
 
   const stats = [
-    { number: 'LIVE', label: 'Platform Now Active' },
-    { number: 'EARLY', label: 'Access Available' },
-    { number: '2026', label: 'Built for Future Trades' },
-    { number: '24/7', label: 'Platform Support' }
+    { number: 'NEW', label: 'Platform Launching' },
+    { number: 'BETA', label: 'Early Access' },
+    { number: '2025', label: 'Built for Modern Trades' },
+    { number: 'REAL', label: 'Authentic Community' }
   ]
 
   const features = [
