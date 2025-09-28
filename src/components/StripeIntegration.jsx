@@ -8,8 +8,14 @@ export default function StripeIntegration() {
   const [isLoading, setIsLoading] = useState(false)
   const [selectedPlan, setSelectedPlan] = useState(null)
 
-  // Your actual Stripe payment link
-  const STRIPE_PAYMENT_URL = 'https://buy.stripe.com/bJebJ1fCJ2ZHeTe5pMafS04'
+  // Package-specific Stripe payment links
+  const STRIPE_PAYMENT_URLS = {
+    bronze: 'https://buy.stripe.com/bJebJ1fCJ2ZHeTe5pMafS04', // £9.99 Bronze Package
+    silver: 'https://buy.stripe.com/bJebJ1fCJ2ZHeTe5pMafS04', // £49.99 Silver Package (update with actual link)
+    gold: 'https://buy.stripe.com/bJebJ1fCJ2ZHeTe5pMafS04',   // £99.99 Gold Package (update with actual link)
+    enterprise: 'https://buy.stripe.com/bJebJ1fCJ2ZHeTe5pMafS04', // £149.99 Enterprise (update with actual link)
+    payg: 'https://buy.stripe.com/bJebJ1fCJ2ZHeTe5pMafS04'    // Pay-as-you-go (update with actual link)
+  }
 
   const creditPackages = [
     {
@@ -126,8 +132,9 @@ export default function StripeIntegration() {
       // Show success message
       alert(`✅ SUCCESS! You have purchased ${packageData.credits} credits for £${packageData.price}. Your new balance is ${newCredits} credits.`)
       
-      // Open Stripe link for actual payment processing
-      window.open(STRIPE_PAYMENT_URL, '_blank')
+      // Open package-specific Stripe link for actual payment processing
+      const paymentUrl = STRIPE_PAYMENT_URLS[packageData.id] || STRIPE_PAYMENT_URLS.bronze
+      window.open(paymentUrl, '_blank')
       
       setIsLoading(false)
       setSelectedPlan(null)
@@ -166,8 +173,8 @@ export default function StripeIntegration() {
       // Show success message
       alert(`✅ SUCCESS! You have purchased ${credits} credits for £${cost.toFixed(2)}. Your new balance is ${newCredits} credits.`)
       
-      // Redirect to Stripe for actual payment
-      window.open(STRIPE_PAYMENT_URL, '_blank')
+      // Redirect to pay-as-you-go Stripe payment
+      window.open(STRIPE_PAYMENT_URLS.payg, '_blank')
     }
   }
 
