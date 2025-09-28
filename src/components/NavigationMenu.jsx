@@ -20,7 +20,8 @@ import {
   HelpCircle,
   Award,
   Heart,
-  Plus
+  Plus,
+  ShoppingCart
 } from 'lucide-react'
 
 export default function NavigationMenu() {
@@ -47,7 +48,8 @@ export default function NavigationMenu() {
         { name: 'About HTK', path: '/about', icon: Info },
         { name: 'Community Projects', path: '/community-projects', icon: Heart },
         { name: 'Trade Collaboration', path: '/trade-collaboration', icon: Users },
-        { name: 'Success Stories', path: '/coming-soon', icon: Award },
+        { name: 'Tradesperson of the Month', path: '/tradesperson-of-the-month', icon: Award },
+        { name: 'Product Showcase', path: '/products', icon: ShoppingCart },
         { name: 'FAQ', path: '/coming-soon', icon: HelpCircle }
       ]
     },

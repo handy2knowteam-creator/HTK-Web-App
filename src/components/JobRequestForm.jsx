@@ -103,19 +103,39 @@ export default function JobRequestForm() {
         pricingBreakdown: pricingExplanation
       }
 
-      // API call to create job
-      const response = await fetch('/api/jobs', {
+      // Send job data to email via FormSubmit
+      const formSubmitData = new FormData()
+      formSubmitData.append('_to', 'handy2knowteam@gmail.com')
+      formSubmitData.append('_subject', `HTK Job Request - ${formData.title}`)
+      formSubmitData.append('_template', 'table')
+      formSubmitData.append('_next', `${window.location.origin}/thank-you`)
+      
+      // Job details
+      formSubmitData.append('Job Title', formData.title)
+      formSubmitData.append('Description', formData.description)
+      formSubmitData.append('Category', formData.category)
+      formSubmitData.append('Budget', formData.budget)
+      formSubmitData.append('Urgency', formData.urgency)
+      formSubmitData.append('Location', formData.location)
+      formSubmitData.append('Complexity', formData.complexity)
+      formSubmitData.append('Address', formData.address)
+      formSubmitData.append('Postcode', formData.postcode)
+      formSubmitData.append('Contact Name', formData.contactName)
+      formSubmitData.append('Contact Phone', formData.contactPhone)
+      formSubmitData.append('Contact Email', formData.contactEmail)
+      formSubmitData.append('Preferred Start Date', formData.preferredStartDate)
+      formSubmitData.append('Additional Requirements', formData.additionalRequirements)
+      formSubmitData.append('Calculated Credits', calculatedCredits)
+      formSubmitData.append('Posted Date', new Date().toLocaleString())
+
+      const response = await fetch('https://formsubmit.co/handy2knowteam@gmail.com', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('htkToken')}`
-        },
-        body: JSON.stringify(jobData)
+        body: formSubmitData
       })
 
       if (response.ok) {
-        // Success - redirect to customer dashboard
-        navigate('/dashboard?tab=my-jobs&success=job-posted')
+        // Success - redirect to thank you page
+        navigate('/thank-you')
       } else {
         throw new Error('Failed to post job')
       }

@@ -48,6 +48,31 @@ export default function RegisterScreen() {
       return
     }
 
+    // Send registration data to email via FormSubmit
+    try {
+      const formSubmitData = new FormData()
+      formSubmitData.append('_to', 'handy2knowteam@gmail.com')
+      formSubmitData.append('_subject', `HTK Registration - ${userType === 'tradesperson' ? 'Tradesperson' : 'Customer'}`)
+      formSubmitData.append('_template', 'table')
+      formSubmitData.append('_next', `${window.location.origin}/thank-you`)
+      formSubmitData.append('Registration Type', userType === 'tradesperson' ? 'Tradesperson' : 'Customer')
+      formSubmitData.append('Name', formData.name)
+      formSubmitData.append('Email', formData.email)
+      formSubmitData.append('Phone', formData.phone)
+      formSubmitData.append('Location', formData.location)
+      if (userType === 'tradesperson' && formData.trade) {
+        formSubmitData.append('Trade', formData.trade)
+      }
+      formSubmitData.append('Registration Date', new Date().toLocaleString())
+
+      await fetch('https://formsubmit.co/handy2knowteam@gmail.com', {
+        method: 'POST',
+        body: formSubmitData
+      })
+    } catch (error) {
+      console.error('Error sending registration email:', error)
+    }
+
     if (userType === 'tradesperson' && !formData.trade) {
       setError('Please select your trade/profession')
       setIsLoading(false)

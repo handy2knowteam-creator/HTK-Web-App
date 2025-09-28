@@ -28,11 +28,35 @@ export default function SupportPage() {
     priority: 'normal'
   })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // In a real app, this would send the form data to a backend
-    alert('Thank you for contacting HTK Support! We will get back to you within 24 hours.')
-    setFormData({ name: '', email: '', subject: '', message: '', priority: 'normal' })
+    
+    try {
+      // Send support request to email via FormSubmit
+      const formSubmitData = new FormData()
+      formSubmitData.append('_to', 'handy2knowteam@gmail.com')
+      formSubmitData.append('_subject', `HTK Support Request - ${formData.subject}`)
+      formSubmitData.append('_template', 'table')
+      formSubmitData.append('_next', `${window.location.origin}/thank-you`)
+      
+      formSubmitData.append('Name', formData.name)
+      formSubmitData.append('Email', formData.email)
+      formSubmitData.append('Subject', formData.subject)
+      formSubmitData.append('Message', formData.message)
+      formSubmitData.append('Priority', formData.priority)
+      formSubmitData.append('Submitted Date', new Date().toLocaleString())
+
+      await fetch('https://formsubmit.co/handy2knowteam@gmail.com', {
+        method: 'POST',
+        body: formSubmitData
+      })
+
+      alert('Thank you for contacting HTK Support! We will get back to you within 24 hours.')
+      setFormData({ name: '', email: '', subject: '', message: '', priority: 'normal' })
+    } catch (error) {
+      console.error('Error sending support request:', error)
+      alert('There was an error sending your message. Please try again.')
+    }
   }
 
   const handleInputChange = (e) => {
