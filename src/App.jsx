@@ -28,6 +28,7 @@ import TradeCollaboration from './components/TradeCollaboration'
 import TradespersonOfTheMonth from './components/TradespersonOfTheMonth'
 import ProductShowcase from './components/ProductShowcase'
 import InvestmentPartnership from './components/InvestmentPartnership'
+import FAQ from './components/FAQ'
 
 // Context
 import { AuthProvider, useAuth } from './contexts/AuthContext'
@@ -78,6 +79,7 @@ function AppContent() {
               <Route path="/tradesperson-of-the-month" element={<TradespersonOfTheMonth />} />
               <Route path="/products" element={<ProductShowcase />} />
               <Route path="/investment-partnership" element={<InvestmentPartnership />} />
+              <Route path="/faq" element={<FAQ />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
