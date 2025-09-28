@@ -45,7 +45,7 @@ export default function SupportPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <header className="bg-black/95 backdrop-blur-sm border-b border-yellow-400/20 sticky top-0 z-40">
+      <header className="bg-black/95 backdrop-blur-sm border-b border-yellow-500/20 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -53,7 +53,7 @@ export default function SupportPage() {
                 onClick={() => navigate('/')}
                 variant="ghost"
                 size="sm"
-                className="text-gray-400 hover:text-yellow-400"
+                className="text-gray-400 hover:text-yellow-500"
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Home
@@ -94,14 +94,14 @@ export default function SupportPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-4">
+                <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
                   <div className="flex items-center space-x-3 mb-2">
-                    <Mail className="h-5 w-5 text-yellow-400" />
-                    <span className="text-yellow-400 font-semibold">Email Support</span>
+                    <Mail className="h-5 w-5 text-yellow-500" />
+                    <span className="text-yellow-500 font-semibold">Email Support</span>
                   </div>
                   <a 
                     href="mailto:handy2knowteam@gmail.com"
-                    className="text-white font-bold text-lg hover:text-yellow-400 transition-colors"
+                    className="text-white font-bold text-lg hover:text-yellow-500 transition-colors"
                   >
                     handy2knowteam@gmail.com
                   </a>
@@ -123,15 +123,15 @@ export default function SupportPage() {
               <CardContent className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-gray-300">General Inquiries</span>
-                  <span className="text-yellow-400 font-semibold">24 hours</span>
+                  <span className="text-yellow-500 font-semibold">24 hours</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-300">Technical Issues</span>
-                  <span className="text-yellow-400 font-semibold">12 hours</span>
+                  <span className="text-yellow-500 font-semibold">12 hours</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-300">Urgent Issues</span>
-                  <span className="text-yellow-400 font-semibold">4 hours</span>
+                  <span className="text-yellow-500 font-semibold">4 hours</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-300">Platform Status</span>
@@ -160,7 +160,7 @@ export default function SupportPage() {
                   'General Questions'
                 ].map((category, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <CheckCircle className="h-4 w-4 text-yellow-400" />
+                    <CheckCircle className="h-4 w-4 text-yellow-500" />
                     <span className="text-gray-300 text-sm">{category}</span>
                   </div>
                 ))}
@@ -188,7 +188,7 @@ export default function SupportPage() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="bg-black border-gray-600 text-white focus:border-yellow-400"
+                        className="bg-black border-gray-600 text-white focus:border-yellow-500"
                         placeholder="Your full name"
                       />
                     </div>
@@ -201,7 +201,7 @@ export default function SupportPage() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="bg-black border-gray-600 text-white focus:border-yellow-400"
+                        className="bg-black border-gray-600 text-white focus:border-yellow-500"
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -216,7 +216,7 @@ export default function SupportPage() {
                         value={formData.subject}
                         onChange={handleInputChange}
                         required
-                        className="bg-black border-gray-600 text-white focus:border-yellow-400"
+                        className="bg-black border-gray-600 text-white focus:border-yellow-500"
                         placeholder="Brief description of your inquiry"
                       />
                     </div>
@@ -227,7 +227,7 @@ export default function SupportPage() {
                         name="priority"
                         value={formData.priority}
                         onChange={handleInputChange}
-                        className="w-full bg-black border border-gray-600 text-white focus:border-yellow-400 rounded-md px-3 py-2"
+                        className="w-full bg-black border border-gray-600 text-white focus:border-yellow-500 rounded-md px-3 py-2"
                       >
                         <option value="low">Low - General Question</option>
                         <option value="normal">Normal - Standard Support</option>
@@ -246,7 +246,7 @@ export default function SupportPage() {
                       onChange={handleInputChange}
                       required
                       rows={6}
-                      className="bg-black border-gray-600 text-white focus:border-yellow-400"
+                      className="bg-black border-gray-600 text-white focus:border-yellow-500"
                       placeholder="Please provide as much detail as possible about your inquiry or issue..."
                     />
                   </div>

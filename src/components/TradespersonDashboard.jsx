@@ -237,7 +237,7 @@ export default function TradespersonDashboard() {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
-        className={`h-4 w-4 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-600'}`}
+        className={`h-4 w-4 ${i < rating ? 'text-yellow-500 fill-current' : 'text-gray-600'}`}
       />
     ))
   }
@@ -254,18 +254,18 @@ export default function TradespersonDashboard() {
               className="w-10 h-10 object-contain"
             />
             <div>
-              <h1 className="text-xl font-bold text-yellow-400">Tradesperson Dashboard</h1>
+              <h1 className="text-xl font-bold text-yellow-500">Tradesperson Dashboard</h1>
               <p className="text-gray-400 text-sm">Welcome back, {user?.name}</p>
             </div>
           </div>
           <div className="flex items-center space-x-4">
             <div className="text-center">
-              <div className="text-yellow-400 font-bold text-lg">{credits}</div>
+              <div className="text-yellow-500 font-bold text-lg">{credits}</div>
               <div className="text-gray-400 text-xs">Credits</div>
             </div>
             <Button
               onClick={() => setActiveTab('buy-credits')}
-              className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold"
+              className="bg-yellow-500 hover:bg-yellow-500 text-black font-semibold"
             >
               Buy Credits
             </Button>
@@ -290,7 +290,7 @@ export default function TradespersonDashboard() {
                 onClick={() => setActiveTab(tab)}
                 className={`py-4 px-2 border-b-2 font-medium text-sm ${
                   activeTab === tab
-                    ? 'border-yellow-400 text-yellow-400'
+                    ? 'border-yellow-500 text-yellow-500'
                     : 'border-transparent text-gray-400 hover:text-gray-300'
                 }`}
               >
@@ -306,7 +306,7 @@ export default function TradespersonDashboard() {
         {activeTab === 'jobs' && (
           <div>
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-yellow-400">Available Jobs</h2>
+              <h2 className="text-2xl font-bold text-yellow-500">Available Jobs</h2>
               <div className="text-gray-400">
                 {jobs.length} jobs available
               </div>
@@ -318,7 +318,7 @@ export default function TradespersonDashboard() {
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div>
-                        <CardTitle className="text-yellow-400">{job.title}</CardTitle>
+                        <CardTitle className="text-yellow-500">{job.title}</CardTitle>
                         <p className="text-gray-400 mt-1">{job.location} • {job.posted}</p>
                         <div className="flex items-center gap-2 mt-2">
                           <Badge 
@@ -332,7 +332,7 @@ export default function TradespersonDashboard() {
                           >
                             {job.urgency}
                           </Badge>
-                          <Badge variant="outline" className="border-yellow-400 text-yellow-400">
+                          <Badge variant="outline" className="border-yellow-500 text-yellow-500">
                             {job.credits} Credit{job.credits > 1 ? 's' : ''}
                           </Badge>
                         </div>
@@ -350,7 +350,7 @@ export default function TradespersonDashboard() {
                       </div>
                       <Button
                         onClick={() => handleBidOnJob(job.id, job.credits)}
-                        className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold"
+                        className="bg-yellow-500 hover:bg-yellow-500 text-black font-semibold"
                         disabled={credits < job.credits}
                       >
                         Bid on Job ({job.credits} Credit{job.credits > 1 ? 's' : ''})
@@ -366,18 +366,18 @@ export default function TradespersonDashboard() {
         {activeTab === 'portfolio' && (
           <div>
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-yellow-400">My Portfolio</h2>
+              <h2 className="text-2xl font-bold text-yellow-500">My Portfolio</h2>
               <div className="flex space-x-2">
                 <Button
                   onClick={() => handleFileUpload('image')}
-                  className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold"
+                  className="bg-yellow-500 hover:bg-yellow-500 text-black font-semibold"
                 >
                   <Camera className="h-4 w-4 mr-2" />
                   Add Photos
                 </Button>
                 <Button
                   onClick={() => handleFileUpload('video')}
-                  className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold"
+                  className="bg-yellow-500 hover:bg-yellow-500 text-black font-semibold"
                 >
                   <Video className="h-4 w-4 mr-2" />
                   Add Videos
@@ -389,8 +389,8 @@ export default function TradespersonDashboard() {
               {portfolio.map((project) => (
                 <Card key={project.id} className="bg-gray-900 border-gray-700">
                   <CardHeader>
-                    <CardTitle className="text-yellow-400 text-lg">{project.title}</CardTitle>
-                    <Badge variant="outline" className="w-fit border-yellow-400 text-yellow-400">
+                    <CardTitle className="text-yellow-500 text-lg">{project.title}</CardTitle>
+                    <Badge variant="outline" className="w-fit border-yellow-500 text-yellow-500">
                       {project.category}
                     </Badge>
                   </CardHeader>
@@ -428,9 +428,9 @@ export default function TradespersonDashboard() {
         {activeTab === 'reviews' && (
           <div>
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-yellow-400">Customer Reviews</h2>
+              <h2 className="text-2xl font-bold text-yellow-500">Customer Reviews</h2>
               <div className="text-right">
-                <div className="text-2xl font-bold text-yellow-400">4.8</div>
+                <div className="text-2xl font-bold text-yellow-500">4.8</div>
                 <div className="flex items-center">
                   {renderStars(5)}
                   <span className="text-gray-400 text-sm ml-2">({reviews.length} reviews)</span>
@@ -454,15 +454,15 @@ export default function TradespersonDashboard() {
                       </div>
                       <div className="text-right text-sm text-gray-400">
                         <div>{review.date}</div>
-                        <div className="text-yellow-400">{review.project}</div>
+                        <div className="text-yellow-500">{review.project}</div>
                       </div>
                     </div>
                     <div className="flex items-center space-x-4 text-sm text-gray-400">
-                      <button className="flex items-center space-x-1 hover:text-yellow-400">
+                      <button className="flex items-center space-x-1 hover:text-yellow-500">
                         <ThumbsUp className="h-4 w-4" />
                         <span>Helpful</span>
                       </button>
-                      <button className="flex items-center space-x-1 hover:text-yellow-400">
+                      <button className="flex items-center space-x-1 hover:text-yellow-500">
                         <MessageSquare className="h-4 w-4" />
                         <span>Reply</span>
                       </button>
@@ -494,14 +494,14 @@ export default function TradespersonDashboard() {
                       value={youtubeLink}
                       onChange={(e) => setYoutubeLink(e.target.value)}
                       placeholder="https://youtube.com/watch?v=... or https://youtu.be/..."
-                      className="bg-black border-gray-600 text-white focus:border-yellow-400"
+                      className="bg-black border-gray-600 text-white focus:border-yellow-500"
                     />
                   </div>
                   
                   {youtubeLink && (
                     <div className="space-y-4">
                       <div className="bg-black rounded-lg p-4 border border-gray-700">
-                        <h4 className="text-yellow-400 font-semibold mb-2">Stream Preview</h4>
+                        <h4 className="text-yellow-500 font-semibold mb-2">Stream Preview</h4>
                         <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center">
                           {youtubeLink.includes('youtube.com') || youtubeLink.includes('youtu.be') ? (
                             <iframe
@@ -541,7 +541,7 @@ export default function TradespersonDashboard() {
                             alert('Stream link copied to clipboard!')
                           }}
                           variant="outline"
-                          className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black"
+                          className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black"
                         >
                           Copy Link
                         </Button>
@@ -608,8 +608,8 @@ export default function TradespersonDashboard() {
                     </div>
                   </div>
                   
-                  <div className="mt-6 p-4 bg-black rounded-lg border border-yellow-400/20">
-                    <h4 className="text-yellow-400 font-semibold mb-2">How to Start Streaming</h4>
+                  <div className="mt-6 p-4 bg-black rounded-lg border border-yellow-500/20">
+                    <h4 className="text-yellow-500 font-semibold mb-2">How to Start Streaming</h4>
                     <ol className="text-sm text-gray-300 space-y-1">
                       <li>1. Set up your YouTube live stream</li>
                       <li>2. Copy the stream URL from YouTube</li>
@@ -626,7 +626,7 @@ export default function TradespersonDashboard() {
 
         {activeTab === 'my-bids' && (
           <div>
-            <h2 className="text-2xl font-bold text-yellow-400 mb-6">My Bids</h2>
+            <h2 className="text-2xl font-bold text-yellow-500 mb-6">My Bids</h2>
             <Card className="bg-gray-900 border-gray-700">
               <CardContent className="p-8 text-center">
                 <p className="text-gray-400">No bids submitted yet.</p>
@@ -640,7 +640,7 @@ export default function TradespersonDashboard() {
 
         {activeTab === 'messages' && (
           <div>
-            <h2 className="text-2xl font-bold text-yellow-400 mb-6">Messages</h2>
+            <h2 className="text-2xl font-bold text-yellow-500 mb-6">Messages</h2>
             <Card className="bg-gray-900 border-gray-700">
               <CardContent className="p-8 text-center">
                 <p className="text-gray-400">No messages yet.</p>
@@ -655,7 +655,7 @@ export default function TradespersonDashboard() {
         {activeTab === 'buy-credits' && (
           <div>
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-yellow-400">Credit Packages</h2>
+              <h2 className="text-2xl font-bold text-yellow-500">Credit Packages</h2>
               <div className="text-gray-400">
                 Current balance: {credits} credits
               </div>
@@ -703,7 +703,7 @@ export default function TradespersonDashboard() {
                 <Card key={index} className={`bg-gray-900 border-2 ${pkg.popular ? 'border-yellow-500' : 'border-gray-700'} hover:scale-105 transition-transform duration-200`}>
                   {pkg.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <Badge className="bg-yellow-400 text-black font-bold px-4 py-1">
+                      <Badge className="bg-yellow-500 text-black font-bold px-4 py-1">
                         MOST POPULAR
                       </Badge>
                     </div>
@@ -713,10 +713,10 @@ export default function TradespersonDashboard() {
                     <div className="flex justify-center mb-4">
                       <img src={pkg.image} alt={pkg.name} className="w-12 h-12 object-contain" />
                     </div>
-                    <CardTitle className="text-yellow-400 text-xl">{pkg.name}</CardTitle>
+                    <CardTitle className="text-yellow-500 text-xl">{pkg.name}</CardTitle>
                     <div className="space-y-2">
                       <div className="text-2xl font-bold text-white">{pkg.price}</div>
-                      <div className="text-yellow-400 font-bold">{pkg.credits}</div>
+                      <div className="text-yellow-500 font-bold">{pkg.credits}</div>
                       <div className="text-gray-400 text-sm">{pkg.perCredit}</div>
                     </div>
                   </CardHeader>
@@ -725,7 +725,7 @@ export default function TradespersonDashboard() {
                     <ul className="space-y-2">
                       {pkg.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-gray-300 text-sm">{feature}</span>
                         </li>
                       ))}
@@ -735,7 +735,7 @@ export default function TradespersonDashboard() {
                       onClick={() => alert(`Purchasing ${pkg.name} package`)}
                       className={`w-full font-semibold ${
                         pkg.popular 
-                          ? 'bg-yellow-400 hover:bg-yellow-500 text-black' 
+                          ? 'bg-yellow-500 hover:bg-yellow-500 text-black' 
                           : 'bg-gray-700 hover:bg-gray-600 text-white'
                       }`}
                     >
@@ -749,7 +749,7 @@ export default function TradespersonDashboard() {
             {/* Credit Usage Guide */}
             <Card className="bg-gray-900 border-gray-700">
               <CardHeader>
-                <CardTitle className="text-yellow-400 text-xl">How Credits Work</CardTitle>
+                <CardTitle className="text-yellow-500 text-xl">How Credits Work</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -781,10 +781,10 @@ export default function TradespersonDashboard() {
 
         {activeTab === 'profile' && (
           <div>
-            <h2 className="text-2xl font-bold text-yellow-400 mb-6">Profile</h2>
+            <h2 className="text-2xl font-bold text-yellow-500 mb-6">Profile</h2>
             <Card className="bg-gray-900 border-gray-700">
               <CardHeader>
-                <CardTitle className="text-yellow-400">Profile Information</CardTitle>
+                <CardTitle className="text-yellow-500">Profile Information</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
@@ -803,7 +803,7 @@ export default function TradespersonDashboard() {
                   <label className="text-gray-400 text-sm">Location</label>
                   <p className="text-white">{user?.location || 'Not specified'}</p>
                 </div>
-                <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold">
+                <Button className="bg-yellow-500 hover:bg-yellow-500 text-black font-semibold">
                   Edit Profile
                 </Button>
               </CardContent>

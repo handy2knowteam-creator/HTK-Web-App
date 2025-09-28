@@ -15,12 +15,12 @@ export default function CommunityGuidelines() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <img src="/htk-logo-large.png" alt="HTK Logo" className="h-16 w-16" />
-              <span className="text-xl font-bold text-yellow-400">HANDY TO KNOW</span>
+              <span className="text-xl font-bold text-yellow-500">HANDY TO KNOW</span>
             </div>
             <Button 
               variant="outline" 
               onClick={() => navigate('/')}
-              className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black"
+              className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Home
@@ -34,15 +34,15 @@ export default function CommunityGuidelines() {
         <Card className="bg-gray-900 border-gray-700">
           <CardContent className="p-8">
             <div className="flex items-center mb-8">
-              <Users className="h-8 w-8 text-yellow-400 mr-4" />
-              <h1 className="text-3xl font-bold text-yellow-400">Community Guidelines</h1>
+              <Users className="h-8 w-8 text-yellow-500 mr-4" />
+              <h1 className="text-3xl font-bold text-yellow-500">Community Guidelines</h1>
             </div>
             <p className="text-gray-400 mb-8">Building a respectful, professional community for all trades</p>
 
             <div className="space-y-8">
               <section>
-                <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-6 mb-6">
-                  <h2 className="text-xl font-semibold text-yellow-400 mb-4 flex items-center">
+                <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-6 mb-6">
+                  <h2 className="text-xl font-semibold text-yellow-500 mb-4 flex items-center">
                     <Heart className="h-5 w-5 mr-2" />
                     Our Community Values
                   </h2>
@@ -54,7 +54,7 @@ export default function CommunityGuidelines() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4 flex items-center">
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4 flex items-center">
                   <Handshake className="h-5 w-5 mr-2" />
                   1. Professional Conduct
                 </h2>
@@ -68,7 +68,7 @@ export default function CommunityGuidelines() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4 flex items-center">
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4 flex items-center">
                   <Shield className="h-5 w-5 mr-2" />
                   2. Safety and Compliance
                 </h2>
@@ -82,7 +82,7 @@ export default function CommunityGuidelines() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4 flex items-center">
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4 flex items-center">
                   <MessageCircle className="h-5 w-5 mr-2" />
                   3. Communication Standards
                 </h2>
@@ -96,7 +96,7 @@ export default function CommunityGuidelines() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4 flex items-center">
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4 flex items-center">
                   <Star className="h-5 w-5 mr-2" />
                   4. Quality and Excellence
                 </h2>
@@ -110,7 +110,7 @@ export default function CommunityGuidelines() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">5. Fair Pricing and Transparency</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">5. Fair Pricing and Transparency</h2>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
                   <li>Provide fair and competitive pricing</li>
                   <li>Be transparent about costs and potential additional charges</li>
@@ -121,7 +121,7 @@ export default function CommunityGuidelines() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">6. Collaboration and Support</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">6. Collaboration and Support</h2>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
                   <li>Support fellow tradespeople and share knowledge</li>
                   <li>Collaborate professionally on team projects</li>
@@ -132,7 +132,7 @@ export default function CommunityGuidelines() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">7. Reviews and Feedback</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">7. Reviews and Feedback</h2>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
                   <li>Provide honest, constructive reviews</li>
                   <li>Base reviews on actual work experience</li>
@@ -143,7 +143,7 @@ export default function CommunityGuidelines() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">8. Platform Integrity</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">8. Platform Integrity</h2>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
                   <li>Use the platform as intended</li>
                   <li>Avoid circumventing platform features or fees</li>
@@ -154,7 +154,7 @@ export default function CommunityGuidelines() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">9. Dispute Resolution</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">9. Dispute Resolution</h2>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   When conflicts arise, we encourage:
                 </p>
@@ -168,7 +168,7 @@ export default function CommunityGuidelines() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">10. Consequences</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">10. Consequences</h2>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   Violations of these guidelines may result in:
                 </p>
@@ -183,8 +183,8 @@ export default function CommunityGuidelines() {
             </div>
 
             <div className="mt-12 pt-8 border-t border-gray-700">
-              <div className="bg-gradient-to-r from-yellow-400/10 to-yellow-600/10 border border-yellow-400/30 rounded-lg p-6">
-                <h3 className="text-yellow-400 font-semibold mb-2">Building Excellence Together</h3>
+              <div className="bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 rounded-lg p-6">
+                <h3 className="text-yellow-500 font-semibold mb-2">Building Excellence Together</h3>
                 <p className="text-gray-300 mb-4">
                   These guidelines help us maintain a professional, supportive community where everyone can succeed. 
                   By following these principles, we build trust, reputation, and mutual success.

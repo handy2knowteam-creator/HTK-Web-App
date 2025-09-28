@@ -218,7 +218,7 @@ export default function StripeIntegration() {
                       <span className="text-lg text-gray-400 line-through">£{pkg.originalPrice}</span>
                     )}
                   </div>
-                  <div className="text-yellow-400 text-sm mt-1">{pkg.credits} Credits</div>
+                  <div className="text-yellow-500 text-sm mt-1">{pkg.credits} Credits</div>
                   {pkg.savings && (
                     <div className="text-green-400 text-xs mt-1">Save £{pkg.savings}</div>
                   )}

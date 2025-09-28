@@ -15,12 +15,12 @@ export default function TermsOfService() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <img src="/htk-logo-large.png" alt="HTK Logo" className="h-16 w-16" />
-              <span className="text-xl font-bold text-yellow-400">HANDY TO KNOW</span>
+              <span className="text-xl font-bold text-yellow-500">HANDY TO KNOW</span>
             </div>
             <Button 
               variant="outline" 
               onClick={() => navigate('/')}
-              className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black"
+              className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Home
@@ -33,12 +33,12 @@ export default function TermsOfService() {
       <div className="max-w-4xl mx-auto px-6 py-12">
         <Card className="bg-gray-900 border-gray-700">
           <CardContent className="p-8">
-            <h1 className="text-3xl font-bold text-yellow-400 mb-8">Terms of Service</h1>
+            <h1 className="text-3xl font-bold text-yellow-500 mb-8">Terms of Service</h1>
             <p className="text-gray-400 mb-8">Last updated: {new Date().toLocaleDateString()}</p>
 
             <div className="space-y-8">
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">1. Acceptance of Terms</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">1. Acceptance of Terms</h2>
                 <p className="text-gray-300 leading-relaxed">
                   By accessing and using HTK - Handy To Know ("the Platform"), you accept and agree to be bound by the terms and provision of this agreement. 
                   If you do not agree to abide by the above, please do not use this service.
@@ -46,7 +46,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">2. Platform Description</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">2. Platform Description</h2>
                 <p className="text-gray-300 leading-relaxed">
                   HTK is a digital platform that connects customers with skilled tradespeople. We facilitate connections but are not directly involved in the actual transactions between users. 
                   HTK operates on a credit-based system for fair and transparent pricing.
@@ -54,7 +54,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">3. User Responsibilities</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">3. User Responsibilities</h2>
                 <div className="space-y-4">
                   <div>
                     <h3 className="text-lg font-medium text-white mb-2">For Customers:</h3>
@@ -79,7 +79,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">4. Credit System</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">4. Credit System</h2>
                 <p className="text-gray-300 leading-relaxed">
                   HTK operates on a credit-based system. Tradespeople purchase credits to bid on jobs and access premium features. 
                   Credits are non-refundable but do not expire. Pricing is transparent and clearly displayed.
@@ -87,7 +87,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">5. Quality Standards</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">5. Quality Standards</h2>
                 <p className="text-gray-300 leading-relaxed">
                   All tradespeople undergo verification processes including background checks and insurance verification. 
                   We maintain high standards for our community and reserve the right to remove users who violate our guidelines.
@@ -95,7 +95,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">6. Dispute Resolution</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">6. Dispute Resolution</h2>
                 <p className="text-gray-300 leading-relaxed">
                   HTK provides mediation services for disputes between users. We encourage direct communication first, 
                   but our support team is available to help resolve issues fairly and professionally.
@@ -103,7 +103,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">7. Privacy and Data</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">7. Privacy and Data</h2>
                 <p className="text-gray-300 leading-relaxed">
                   We respect your privacy and handle personal data in accordance with our Privacy Policy and applicable data protection laws. 
                   We do not sell personal information to third parties.
@@ -111,7 +111,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">8. Limitation of Liability</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">8. Limitation of Liability</h2>
                 <p className="text-gray-300 leading-relaxed">
                   HTK acts as a platform facilitator. We are not liable for the quality of work performed, 
                   disputes between users, or any damages arising from use of the platform. Users engage with each other at their own risk.
@@ -119,7 +119,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">9. Modifications</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">9. Modifications</h2>
                 <p className="text-gray-300 leading-relaxed">
                   HTK reserves the right to modify these terms at any time. Users will be notified of significant changes, 
                   and continued use of the platform constitutes acceptance of modified terms.
@@ -127,7 +127,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">10. Contact Information</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">10. Contact Information</h2>
                 <p className="text-gray-300 leading-relaxed">
                   For questions about these Terms of Service, please contact us at legal@handytoknow.com or through our support system.
                 </p>

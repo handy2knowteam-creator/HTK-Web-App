@@ -208,7 +208,7 @@ export default function JobRequestForm() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <header className="htk-header-luxury border-b border-yellow-400/20">
+      <header className="htk-header-luxury border-b border-yellow-500/20">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -257,7 +257,7 @@ export default function JobRequestForm() {
                       value={formData.title}
                       onChange={(e) => handleInputChange('title', e.target.value)}
                       placeholder="e.g., Kitchen tap replacement, Electrical fault repair..."
-                      className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-400 focus:outline-none"
+                      className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none"
                       required
                     />
                   </div>
@@ -274,7 +274,7 @@ export default function JobRequestForm() {
                           onClick={() => handleInputChange('category', option.value)}
                           className={`p-3 rounded-lg border text-center transition-colors ${
                             formData.category === option.value
-                              ? 'border-yellow-400 bg-yellow-400/10 text-yellow-400'
+                              ? 'border-yellow-500 bg-yellow-500/10 text-yellow-500'
                               : 'border-gray-600 bg-gray-800 text-gray-300 hover:border-gray-500'
                           }`}
                         >
@@ -294,7 +294,7 @@ export default function JobRequestForm() {
                       onChange={(e) => handleInputChange('description', e.target.value)}
                       placeholder="Please describe the work needed in detail..."
                       rows={4}
-                      className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-400 focus:outline-none"
+                      className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none"
                       required
                     />
                   </div>
@@ -327,7 +327,7 @@ export default function JobRequestForm() {
                           onClick={() => handleInputChange('budget', option.value)}
                           className={`p-3 rounded-lg border text-left transition-colors ${
                             formData.budget === option.value
-                              ? 'border-yellow-400 bg-yellow-400/10'
+                              ? 'border-yellow-500 bg-yellow-500/10'
                               : 'border-gray-600 bg-gray-800 hover:border-gray-500'
                           }`}
                         >
@@ -352,7 +352,7 @@ export default function JobRequestForm() {
                           onClick={() => handleInputChange('urgency', option.value)}
                           className={`p-3 rounded-lg border text-center transition-colors ${
                             formData.urgency === option.value
-                              ? 'border-yellow-400 bg-yellow-400/10'
+                              ? 'border-yellow-500 bg-yellow-500/10'
                               : 'border-gray-600 bg-gray-800 hover:border-gray-500'
                           }`}
                         >
@@ -377,7 +377,7 @@ export default function JobRequestForm() {
                           onClick={() => handleInputChange('location', option.value)}
                           className={`p-3 rounded-lg border text-center transition-colors ${
                             formData.location === option.value
-                              ? 'border-yellow-400 bg-yellow-400/10'
+                              ? 'border-yellow-500 bg-yellow-500/10'
                               : 'border-gray-600 bg-gray-800 hover:border-gray-500'
                           }`}
                         >
@@ -402,7 +402,7 @@ export default function JobRequestForm() {
                           onClick={() => handleInputChange('complexity', option.value)}
                           className={`p-3 rounded-lg border text-center transition-colors ${
                             formData.complexity === option.value
-                              ? 'border-yellow-400 bg-yellow-400/10'
+                              ? 'border-yellow-500 bg-yellow-500/10'
                               : 'border-gray-600 bg-gray-800 hover:border-gray-500'
                           }`}
                         >
@@ -430,7 +430,7 @@ export default function JobRequestForm() {
                         type="text"
                         value={formData.contactName}
                         onChange={(e) => handleInputChange('contactName', e.target.value)}
-                        className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-yellow-400 focus:outline-none"
+                        className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-yellow-500 focus:outline-none"
                         required
                       />
                     </div>
@@ -442,7 +442,7 @@ export default function JobRequestForm() {
                         type="tel"
                         value={formData.contactPhone}
                         onChange={(e) => handleInputChange('contactPhone', e.target.value)}
-                        className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-yellow-400 focus:outline-none"
+                        className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-yellow-500 focus:outline-none"
                         required
                       />
                     </div>
@@ -456,7 +456,7 @@ export default function JobRequestForm() {
                       type="email"
                       value={formData.contactEmail}
                       onChange={(e) => handleInputChange('contactEmail', e.target.value)}
-                      className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-yellow-400 focus:outline-none"
+                      className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-yellow-500 focus:outline-none"
                     />
                   </div>
 
@@ -469,7 +469,7 @@ export default function JobRequestForm() {
                       value={formData.address}
                       onChange={(e) => handleInputChange('address', e.target.value)}
                       placeholder="Full address where work will be carried out"
-                      className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-400 focus:outline-none"
+                      className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none"
                       required
                     />
                   </div>
@@ -483,7 +483,7 @@ export default function JobRequestForm() {
                         type="text"
                         value={formData.postcode}
                         onChange={(e) => handleInputChange('postcode', e.target.value)}
-                        className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-yellow-400 focus:outline-none"
+                        className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-yellow-500 focus:outline-none"
                       />
                     </div>
                     <div>
@@ -494,7 +494,7 @@ export default function JobRequestForm() {
                         type="date"
                         value={formData.preferredStartDate}
                         onChange={(e) => handleInputChange('preferredStartDate', e.target.value)}
-                        className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-yellow-400 focus:outline-none"
+                        className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-yellow-500 focus:outline-none"
                       />
                     </div>
                   </div>
@@ -508,7 +508,7 @@ export default function JobRequestForm() {
                       onChange={(e) => handleInputChange('additionalRequirements', e.target.value)}
                       placeholder="Any specific requirements, access issues, or additional information..."
                       rows={3}
-                      className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-400 focus:outline-none"
+                      className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none"
                     />
                   </div>
                 </CardContent>
@@ -566,7 +566,7 @@ export default function JobRequestForm() {
 
                     {pricingExplanation && (
                       <div className="space-y-3">
-                        <div className="text-sm font-medium text-yellow-400 border-t border-gray-700 pt-3">
+                        <div className="text-sm font-medium text-yellow-500 border-t border-gray-700 pt-3">
                           Pricing Breakdown:
                         </div>
                         {pricingExplanation.breakdown.map((item, index) => (
@@ -592,21 +592,21 @@ export default function JobRequestForm() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 rounded-full bg-yellow-400 text-black text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</div>
+                    <div className="w-6 h-6 rounded-full bg-yellow-500 text-black text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</div>
                     <div className="text-sm text-gray-300">
                       <div className="font-medium text-white">Post Your Job</div>
                       <div>Fill out the details and we'll calculate fair pricing</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 rounded-full bg-yellow-400 text-black text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</div>
+                    <div className="w-6 h-6 rounded-full bg-yellow-500 text-black text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</div>
                     <div className="text-sm text-gray-300">
                       <div className="font-medium text-white">Get Quotes</div>
                       <div>Qualified tradespeople bid on your job</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 rounded-full bg-yellow-400 text-black text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</div>
+                    <div className="w-6 h-6 rounded-full bg-yellow-500 text-black text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</div>
                     <div className="text-sm text-gray-300">
                       <div className="font-medium text-white">Choose & Connect</div>
                       <div>Review profiles and connect directly</div>
@@ -627,7 +627,7 @@ export default function JobRequestForm() {
                   <Button
                     onClick={() => navigate('/support')}
                     variant="outline"
-                    className="w-full border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black"
+                    className="w-full border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black"
                   >
                     Contact Support
                   </Button>

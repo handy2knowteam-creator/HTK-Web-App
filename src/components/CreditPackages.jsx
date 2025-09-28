@@ -109,7 +109,7 @@ export default function CreditPackages() {
               className="w-10 h-10 object-contain"
             />
             <div>
-              <h1 className="text-xl font-bold text-yellow-400">Credit Packages</h1>
+              <h1 className="text-xl font-bold text-yellow-500">Credit Packages</h1>
               <p className="text-gray-400 text-sm">Choose the perfect package for your business</p>
             </div>
           </div>
@@ -126,7 +126,7 @@ export default function CreditPackages() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto p-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-yellow-400 mb-4">
+          <h2 className="text-3xl font-bold text-yellow-500 mb-4">
             Choose Your Credit Package
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -143,7 +143,7 @@ export default function CreditPackages() {
             >
               {pkg.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-yellow-400 text-black font-bold px-4 py-1">
+                  <Badge className="bg-yellow-500 text-black font-bold px-4 py-1">
                     MOST POPULAR
                   </Badge>
                 </div>
@@ -155,7 +155,7 @@ export default function CreditPackages() {
                     {pkg.icon}
                   </div>
                 </div>
-                <CardTitle className="text-yellow-400 text-xl">{pkg.name}</CardTitle>
+                <CardTitle className="text-yellow-500 text-xl">{pkg.name}</CardTitle>
                 <div className="space-y-2">
                   <div className="text-3xl font-bold text-white">
                     {pkg.price}{pkg.type === 'monthly' ? '/month' : pkg.type === 'payg' ? '/credit' : ''}
@@ -167,7 +167,7 @@ export default function CreditPackages() {
                     <div className="text-green-400 font-semibold">Save {pkg.savings}</div>
                   )}
                 </div>
-                <div className="text-yellow-400 font-bold text-lg">
+                <div className="text-yellow-500 font-bold text-lg">
                   {pkg.credits === 'Variable' ? 'Flexible Credits' : `${pkg.credits} Credits${pkg.type === 'monthly' ? '/month' : ''}`}
                 </div>
               </CardHeader>
@@ -186,7 +186,7 @@ export default function CreditPackages() {
                   onClick={() => handlePurchase(pkg)}
                   className={`w-full font-semibold ${
                     pkg.popular 
-                      ? 'bg-yellow-400 hover:bg-yellow-500 text-black' 
+                      ? 'bg-yellow-500 hover:bg-yellow-500 text-black' 
                       : 'bg-gray-700 hover:bg-gray-600 text-white'
                   }`}
                 >
@@ -200,7 +200,7 @@ export default function CreditPackages() {
         {/* Credit Usage Guide */}
         <Card className="bg-gray-900 border-gray-700 mb-8">
           <CardHeader>
-            <CardTitle className="text-yellow-400 text-xl">How Credits Work</CardTitle>
+            <CardTitle className="text-yellow-500 text-xl">How Credits Work</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

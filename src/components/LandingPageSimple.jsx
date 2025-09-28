@@ -152,7 +152,7 @@ export default function LandingPageSimple() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="htk-card-luxury p-6 text-center">
-                <feature.icon className="h-12 w-12 text-yellow-400 mx-auto mb-4" />
+                <feature.icon className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
                 <h3 className="htk-text-luxury text-xl font-semibold mb-3">{feature.title}</h3>
                 <p className="text-gray-300">{feature.description}</p>
               </div>
@@ -162,7 +162,7 @@ export default function LandingPageSimple() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t border-yellow-400/20">
+      <footer className="py-12 px-4 border-t border-yellow-500/20">
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <img 

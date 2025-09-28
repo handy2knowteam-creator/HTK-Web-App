@@ -15,12 +15,12 @@ export default function PrivacyPolicy() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <img src="/htk-logo-large.png" alt="HTK Logo" className="h-16 w-16" />
-              <span className="text-xl font-bold text-yellow-400">HANDY TO KNOW</span>
+              <span className="text-xl font-bold text-yellow-500">HANDY TO KNOW</span>
             </div>
             <Button 
               variant="outline" 
               onClick={() => navigate('/')}
-              className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black"
+              className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Home
@@ -34,14 +34,14 @@ export default function PrivacyPolicy() {
         <Card className="bg-gray-900 border-gray-700">
           <CardContent className="p-8">
             <div className="flex items-center mb-8">
-              <Shield className="h-8 w-8 text-yellow-400 mr-4" />
-              <h1 className="text-3xl font-bold text-yellow-400">Privacy Policy</h1>
+              <Shield className="h-8 w-8 text-yellow-500 mr-4" />
+              <h1 className="text-3xl font-bold text-yellow-500">Privacy Policy</h1>
             </div>
             <p className="text-gray-400 mb-8">Last updated: {new Date().toLocaleDateString()}</p>
 
             <div className="space-y-8">
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4 flex items-center">
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4 flex items-center">
                   <Eye className="h-5 w-5 mr-2" />
                   1. Information We Collect
                 </h2>
@@ -68,7 +68,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4 flex items-center">
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4 flex items-center">
                   <Database className="h-5 w-5 mr-2" />
                   2. How We Use Your Information
                 </h2>
@@ -84,7 +84,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4 flex items-center">
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4 flex items-center">
                   <Lock className="h-5 w-5 mr-2" />
                   3. Information Sharing
                 </h2>
@@ -103,7 +103,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">4. Data Security</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">4. Data Security</h2>
                 <p className="text-gray-300 leading-relaxed">
                   We implement industry-standard security measures to protect your personal information, including encryption, 
                   secure servers, and regular security audits. However, no method of transmission over the internet is 100% secure.
@@ -111,7 +111,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">5. Your Rights</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">5. Your Rights</h2>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
                   <li>Access and review your personal information</li>
                   <li>Request corrections to inaccurate data</li>
@@ -123,7 +123,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">6. Cookies and Tracking</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">6. Cookies and Tracking</h2>
                 <p className="text-gray-300 leading-relaxed">
                   We use cookies and similar technologies to enhance your experience, remember preferences, and analyze platform usage. 
                   You can control cookie settings through your browser preferences.
@@ -131,7 +131,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">7. Data Retention</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">7. Data Retention</h2>
                 <p className="text-gray-300 leading-relaxed">
                   We retain personal information for as long as necessary to provide services and comply with legal obligations. 
                   Inactive accounts may be deleted after extended periods of non-use with appropriate notice.
@@ -139,7 +139,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">8. Children's Privacy</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">8. Children's Privacy</h2>
                 <p className="text-gray-300 leading-relaxed">
                   HTK is not intended for users under 18 years of age. We do not knowingly collect personal information from children. 
                   If we become aware of such collection, we will delete the information promptly.
@@ -147,7 +147,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">9. International Users</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">9. International Users</h2>
                 <p className="text-gray-300 leading-relaxed">
                   HTK operates primarily in the UK and complies with UK data protection laws including GDPR. 
                   International users should be aware that data may be processed in the UK.
@@ -155,7 +155,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-400 mb-4">10. Contact Us</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">10. Contact Us</h2>
                 <p className="text-gray-300 leading-relaxed">
                   For privacy-related questions or to exercise your rights, contact us at privacy@handytoknow.com or through our support system. 
                   We will respond to requests within 30 days.
@@ -164,8 +164,8 @@ export default function PrivacyPolicy() {
             </div>
 
             <div className="mt-12 pt-8 border-t border-gray-700">
-              <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-6">
-                <h3 className="text-yellow-400 font-semibold mb-2">Your Privacy Matters</h3>
+              <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-6">
+                <h3 className="text-yellow-500 font-semibold mb-2">Your Privacy Matters</h3>
                 <p className="text-gray-300">
                   HTK is committed to protecting your privacy and maintaining transparency about our data practices. 
                   We believe in building trust through clear communication and responsible data handling.

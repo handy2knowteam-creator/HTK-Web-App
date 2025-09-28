@@ -108,7 +108,7 @@ export default function NavigationMenu() {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 w-screen max-w-6xl bg-black border border-yellow-400/30 rounded-lg shadow-2xl z-50 overflow-hidden">
+        <div className="absolute top-full right-0 mt-2 w-screen max-w-6xl bg-black border border-yellow-500/30 rounded-lg shadow-2xl z-50 overflow-hidden">
           <div className="htk-card-luxury border-0 rounded-lg">
             <div className="p-6">
               {/* Header */}
@@ -124,7 +124,7 @@ export default function NavigationMenu() {
                   onClick={() => setIsOpen(false)}
                   variant="ghost"
                   size="sm"
-                  className="text-gray-400 hover:text-yellow-400"
+                  className="text-gray-400 hover:text-yellow-500"
                 >
                   <X className="h-4 w-4" />
                 </Button>
@@ -135,8 +135,8 @@ export default function NavigationMenu() {
                 {menuSections.map((section, sectionIndex) => (
                   <div key={sectionIndex} className="space-y-3">
                     {/* Section Header */}
-                    <div className="flex items-center space-x-2 pb-2 border-b border-yellow-400/20">
-                      <section.icon className="h-4 w-4 text-yellow-400" />
+                    <div className="flex items-center space-x-2 pb-2 border-b border-yellow-500/20">
+                      <section.icon className="h-4 w-4 text-yellow-500" />
                       <h4 className="htk-text-luxury font-semibold text-sm">{section.title}</h4>
                     </div>
 
@@ -146,13 +146,13 @@ export default function NavigationMenu() {
                         <button
                           key={itemIndex}
                           onClick={() => handleItemClick(item.path)}
-                          className="w-full flex items-center space-x-3 p-2 rounded-lg hover:bg-yellow-400/10 transition-colors group"
+                          className="w-full flex items-center space-x-3 p-2 rounded-lg hover:bg-yellow-500/10 transition-colors group"
                         >
-                          <item.icon className="h-4 w-4 text-gray-400 group-hover:text-yellow-400 transition-colors" />
+                          <item.icon className="h-4 w-4 text-gray-400 group-hover:text-yellow-500 transition-colors" />
                           <span className="text-gray-300 group-hover:text-white text-sm font-medium transition-colors">
                             {item.name}
                           </span>
-                          <ArrowRight className="h-3 w-3 text-gray-500 group-hover:text-yellow-400 ml-auto opacity-0 group-hover:opacity-100 transition-all" />
+                          <ArrowRight className="h-3 w-3 text-gray-500 group-hover:text-yellow-500 ml-auto opacity-0 group-hover:opacity-100 transition-all" />
                         </button>
                       ))}
                     </div>
@@ -161,7 +161,7 @@ export default function NavigationMenu() {
               </div>
 
               {/* Quick Actions Footer */}
-              <div className="mt-8 pt-6 border-t border-yellow-400/20">
+              <div className="mt-8 pt-6 border-t border-yellow-500/20">
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Button
                     onClick={() => handleItemClick('/register/customer')}
@@ -173,7 +173,7 @@ export default function NavigationMenu() {
                   <Button
                     onClick={() => handleItemClick('/register/tradesperson')}
                     variant="outline"
-                    className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black flex-1 sm:flex-none"
+                    className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black flex-1 sm:flex-none"
                   >
                     <Wrench className="h-4 w-4 mr-2" />
                     Join as Trade
@@ -181,7 +181,7 @@ export default function NavigationMenu() {
                   <Button
                     onClick={() => handleItemClick('/support')}
                     variant="ghost"
-                    className="text-gray-400 hover:text-yellow-400 flex-1 sm:flex-none"
+                    className="text-gray-400 hover:text-yellow-500 flex-1 sm:flex-none"
                   >
                     <Phone className="h-4 w-4 mr-2" />
                     Get Support

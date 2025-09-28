@@ -215,7 +215,7 @@ export default function SubscriptionManager() {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-400"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-500"></div>
       </div>
     )
   }
@@ -325,14 +325,14 @@ export default function SubscriptionManager() {
             <Card key={pkg.id} className={`htk-card-luxury relative ${pkg.color}`}>
               {pkg.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-yellow-400 text-black font-bold px-3 py-1">
+                  <Badge className="bg-yellow-500 text-black font-bold px-3 py-1">
                     Most Popular
                   </Badge>
                 </div>
               )}
               
               <CardHeader className="text-center">
-                <div className="mx-auto mb-2 text-yellow-400">
+                <div className="mx-auto mb-2 text-yellow-500">
                   {pkg.icon}
                 </div>
                 <CardTitle className="htk-text-luxury">{pkg.name}</CardTitle>

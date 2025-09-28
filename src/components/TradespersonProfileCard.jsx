@@ -14,7 +14,7 @@ export default function TradespersonProfileCard({
         <CardTitle className="text-xl font-bold text-yellow-500">
           {tradesperson.name}
         </CardTitle>
-        <div className="flex items-center text-yellow-400">
+        <div className="flex items-center text-yellow-500">
           <StarIcon className="h-5 w-5 fill-current" />
           <span className="ml-1 text-lg font-semibold">{tradesperson.rating}</span>
         </div>

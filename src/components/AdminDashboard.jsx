@@ -203,7 +203,7 @@ export default function AdminDashboard() {
                       <tr key={tradesperson.id} className="border-b border-gray-800">
                         <td className="p-2 text-white">{tradesperson.name}</td>
                         <td className="p-2 text-gray-300">{tradesperson.email}</td>
-                        <td className="p-2 text-yellow-400">{tradesperson.trade}</td>
+                        <td className="p-2 text-yellow-500">{tradesperson.trade}</td>
                         <td className="p-2 text-gray-300">{tradesperson.location}</td>
                         <td className="p-2 text-green-400">{tradesperson.credits}</td>
                         <td className="p-2">

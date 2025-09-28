@@ -280,7 +280,7 @@ export default function CustomerDashboard() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="text-center mb-6">
-            <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-yellow-500">
+            <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-yellow-500">
               <span className="text-gray-900 font-bold text-2xl">
                 {user?.first_name?.[0]}{user?.last_name?.[0]}
               </span>
@@ -321,7 +321,7 @@ export default function CustomerDashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center border border-yellow-500">
+              <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center border border-yellow-500">
                 <span className="text-gray-900 font-bold text-sm">HTK</span>
               </div>
               <h1 className="text-xl font-bold text-yellow-500">Handy To Know</h1>

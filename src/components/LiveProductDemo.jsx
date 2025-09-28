@@ -331,7 +331,7 @@ export default function LiveProductDemo() {
                       <h3 className="font-semibold text-white mb-1">{product.name}</h3>
                       <p className="text-sm text-htk-gold mb-2">{product.category}</p>
                       <div className="flex items-center mb-2">
-                        <Star className="h-4 w-4 text-yellow-400 mr-1" />
+                        <Star className="h-4 w-4 text-yellow-500 mr-1" />
                         <span className="text-sm text-white">{product.rating}</span>
                       </div>
                     </div>
