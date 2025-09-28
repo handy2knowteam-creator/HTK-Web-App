@@ -18,7 +18,44 @@
   # React environment
   REACT_APP_ENV = "production"
 
-# Redirect rules for Single Page Application
+# Domain redirects - Both domains serve the same content
+[[redirects]]
+  from = "https://handy2know.com/*"
+  to = "https://www.handy2know.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://handy2know.co.uk/*"
+  to = "https://www.handy2know.co.uk/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://handy2know.com/*"
+  to = "https://www.handy2know.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://handy2know.co.uk/*"
+  to = "https://www.handy2know.co.uk/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.handy2know.com/*"
+  to = "https://www.handy2know.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.handy2know.co.uk/*"
+  to = "https://www.handy2know.co.uk/:splat"
+  status = 301
+  force = true
+
+# SPA routing - Handle all routes for React Router
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -99,9 +136,15 @@
 [[plugins]]
   package = "@netlify/plugin-sitemap"
 
-# Auto-deployment configuration
-# When connected to GitHub repository: handy2knowteam-creator/HTK-Web-App
-# Branch: master
-# Domain: www.handy2know.com
-# SSL: Auto-enabled
-# Deploy previews: Enabled for pull requests
+# Multi-domain configuration
+# Primary domains: www.handy2know.com and www.handy2know.co.uk
+# Both domains will serve identical HTK content
+# SSL certificates will be auto-generated for both domains
+# 
+# Setup in Netlify Dashboard:
+# 1. Add both domains as custom domains
+# 2. Configure DNS for both:
+#    - www.handy2know.com CNAME -> your-site.netlify.app
+#    - www.handy2know.co.uk CNAME -> your-site.netlify.app
+# 3. SSL certificates will be automatically provisioned
+# 4. Both sites will serve identical content with proper redirects
