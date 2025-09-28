@@ -1,10 +1,5 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Select, SelectContent, SelectItem, SelectValue, SelectTrigger } from '@/components/ui/select'
 import { useAuth } from '@/contexts/AuthContext'
 
 export default function RegisterScreen() {
@@ -54,34 +49,42 @@ export default function RegisterScreen() {
     }
 
     if (userType === 'tradesperson' && !formData.trade) {
-      setError('Please select your trade')
+      setError('Please select your trade/profession')
       setIsLoading(false)
       return
     }
 
     try {
-      const registrationData = {
+      await register(formData, userType)
+      
+      // Send email notification
+      const emailData = {
         name: formData.name,
         email: formData.email,
-        password: formData.password,
         phone: formData.phone,
         location: formData.location,
-        userType: userType
+        userType: userType,
+        trade: formData.trade || 'N/A',
+        registrationDate: new Date().toISOString()
       }
 
-      // Add trade for tradespeople
-      if (userType === 'tradesperson') {
-        registrationData.trade = formData.trade
-      }
+      // Send to FormSubmit
+      const formSubmitData = new FormData()
+      formSubmitData.append('_subject', `New ${userType} Registration - HTK Platform`)
+      formSubmitData.append('Name', formData.name)
+      formSubmitData.append('Email', formData.email)
+      formSubmitData.append('Phone', formData.phone)
+      formSubmitData.append('Location', formData.location)
+      formSubmitData.append('User Type', userType)
+      formSubmitData.append('Trade/Profession', formData.trade || 'N/A')
+      formSubmitData.append('Registration Date', new Date().toLocaleString())
 
-      const result = await register(registrationData)
-      
-      if (result.success) {
-        // Registration successful, user will be redirected by AuthContext
-        navigate('/dashboard')
-      } else {
-        setError(result.error || 'Registration failed')
-      }
+      fetch('https://formsubmit.co/handy2knowteam@gmail.com', {
+        method: 'POST',
+        body: formSubmitData
+      })
+
+      navigate(`/${userType}-dashboard`)
     } catch (err) {
       setError(err.message || 'Registration failed. Please try again.')
     } finally {
@@ -104,193 +107,256 @@ export default function RegisterScreen() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Header with HTK Logo */}
-      <header className="htk-header border-b htk-border-gold">
-        <div className="htk-container px-6 py-4">
-          <div className="flex items-center justify-center">
-            <div className="htk-logo-container">
-              <img src="/htk-logo-large.png" alt="HTK Logo" className="h-20 w-20" />
-              <span className="htk-logo-text text-2xl">HANDY TO KNOW</span>
-            </div>
-          </div>
+    <div style={{ 
+      minHeight: '100vh', 
+      backgroundColor: '#000', 
+      color: '#D4AF37',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '20px'
+    }}>
+      <div style={{
+        backgroundColor: '#111',
+        padding: '2rem',
+        borderRadius: '8px',
+        maxWidth: '500px',
+        width: '100%',
+        border: '1px solid #D4AF37'
+      }}>
+        {/* Header */}
+        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          <img 
+            src="/htk-logo-new.png" 
+            alt="HTK Logo" 
+            style={{ height: '80px', width: 'auto', marginBottom: '1rem' }}
+          />
+          <h1 style={{ color: '#D4AF37', fontSize: '2rem', marginBottom: '0.5rem' }}>HTK</h1>
+          <p style={{ color: '#D4AF37', marginBottom: '1rem' }}>Join HTK</p>
+          <p style={{ color: '#888' }}>Create your {userType === 'customer' ? 'Customer' : 'Tradesperson'} account</p>
         </div>
-      </header>
 
-      <div className="flex items-center justify-center min-h-[calc(100vh-80px)] px-6 py-12">
-        <Card className="htk-card w-full max-w-md htk-shadow-gold">
-          <CardContent className="p-8">
-            <div className="text-center mb-8">
-              <div className="htk-logo-container justify-center mb-4">
-                <div className="bg-gradient-to-br from-htk-gold to-htk-gold-dark rounded-full p-4">
-                  <span className="text-black font-bold text-xl">HTK</span>
-                </div>
-              </div>
-              <h1 className="text-2xl font-bold text-htk-gold mb-2">Join HTK</h1>
-              <p className="htk-text-muted">Create your {userType === 'customer' ? 'Customer' : 'Tradesperson'} account</p>
+        <form onSubmit={handleSubmit}>
+          {error && (
+            <div style={{
+              backgroundColor: '#ff000020',
+              border: '1px solid #ff0000',
+              color: '#ff6666',
+              padding: '12px',
+              borderRadius: '4px',
+              marginBottom: '1rem'
+            }}>
+              {error}
             </div>
+          )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {error && (
-                <div className="bg-red-900/50 border border-red-500 text-red-200 px-4 py-3 rounded">
-                  {error}
-                </div>
-              )}
+          <div style={{
+            backgroundColor: '#1a1a1a',
+            padding: '1.5rem',
+            borderRadius: '8px',
+            border: '1px solid #D4AF37',
+            marginBottom: '1rem'
+          }}>
+            <h2 style={{ color: '#D4AF37', fontSize: '1.2rem', marginBottom: '1rem' }}>
+              {userType === 'customer' ? 'Customer Registration' : 'Tradesperson Registration'}
+            </h2>
 
-              <div className="bg-gradient-to-r from-htk-gold/10 to-htk-gold-dark/10 rounded-lg p-6 border htk-border-gold">
-                <h2 className="text-lg font-semibold text-htk-gold mb-4">
-                  {userType === 'customer' ? 'Customer Registration' : 'Tradesperson Registration'}
-                </h2>
-                
-                <div className="space-y-4">
-                  <div>
-                    <Label htmlFor="name" className="text-htk-gold-light">Full Name</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      placeholder="Enter your full name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-gray-800 border-htk-gold/30 text-white placeholder-gray-400 focus:border-htk-gold"
-                    />
-                  </div>
+            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#D4AF37' }}>
+              Full Name
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your full name"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+                className="htk-input-real-gold"
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  marginTop: '0.5rem',
+                  backgroundColor: '#222',
+                  color: '#D4AF37',
+                  border: '1px solid #D4AF37',
+                  borderRadius: '4px'
+                }}
+              />
+            </label>
 
-                  <div>
-                    <Label htmlFor="email" className="text-htk-gold-light">Email</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="Enter your email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-gray-800 border-htk-gold/30 text-white placeholder-gray-400 focus:border-htk-gold"
-                    />
-                  </div>
+            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#D4AF37' }}>
+              Email
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+                className="htk-input-real-gold"
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  marginTop: '0.5rem',
+                  backgroundColor: '#222',
+                  color: '#D4AF37',
+                  border: '1px solid #D4AF37',
+                  borderRadius: '4px'
+                }}
+              />
+            </label>
 
-                  <div>
-                    <Label htmlFor="phone" className="text-htk-gold-light">Phone Number</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="Enter your phone number"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-gray-800 border-htk-gold/30 text-white placeholder-gray-400 focus:border-htk-gold"
-                    />
-                  </div>
+            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#D4AF37' }}>
+              Phone Number
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Enter your phone number"
+                value={formData.phone}
+                onChange={handleInputChange}
+                required
+                className="htk-input-real-gold"
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  marginTop: '0.5rem',
+                  backgroundColor: '#222',
+                  color: '#D4AF37',
+                  border: '1px solid #D4AF37',
+                  borderRadius: '4px'
+                }}
+              />
+            </label>
 
-                  <div>
-                    <Label htmlFor="location" className="text-htk-gold-light">Location</Label>
-                    <Input
-                      id="location"
-                      name="location"
-                      type="text"
-                      placeholder="Enter your location"
-                      value={formData.location}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-gray-800 border-htk-gold/30 text-white placeholder-gray-400 focus:border-htk-gold"
-                    />
-                  </div>
+            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#D4AF37' }}>
+              Location
+              <input
+                type="text"
+                name="location"
+                placeholder="Enter your location"
+                value={formData.location}
+                onChange={handleInputChange}
+                required
+                className="htk-input-real-gold"
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  marginTop: '0.5rem',
+                  backgroundColor: '#222',
+                  color: '#D4AF37',
+                  border: '1px solid #D4AF37',
+                  borderRadius: '4px'
+                }}
+              />
+            </label>
 
-                  {userType === 'tradesperson' && (
-                    <div>
-                      <Label htmlFor="trade" className="text-htk-gold-light">Trade/Profession</Label>
-                      <Select onValueChange={handleSelectChange} required>
-                        <SelectTrigger className="bg-gray-800 border-htk-gold/30 text-white focus:border-htk-gold">
-                          <SelectValue placeholder="Select your trade" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-gray-800 border-htk-gold/30 text-white">
-                          {trades.map((trade) => (
-                            <SelectItem key={trade} value={trade} className="text-white hover:bg-gray-700">
-                              {trade}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  )}
-
-                  <div>
-                    <Label htmlFor="password" className="text-htk-gold-light">Password</Label>
-                    <Input
-                      id="password"
-                      name="password"
-                      type="password"
-                      placeholder="Create a password"
-                      value={formData.password}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-gray-800 border-htk-gold/30 text-white placeholder-gray-400 focus:border-htk-gold"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="confirmPassword" className="text-htk-gold-light">Confirm Password</Label>
-                    <Input
-                      id="confirmPassword"
-                      name="confirmPassword"
-                      type="password"
-                      placeholder="Confirm your password"
-                      value={formData.confirmPassword}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-gray-800 border-htk-gold/30 text-white placeholder-gray-400 focus:border-htk-gold"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <Button 
-                type="submit" 
-                disabled={isLoading}
-                className="htk-btn-gold w-full py-3 text-lg font-semibold"
-              >
-                {isLoading ? 'Creating Account...' : 'Create Account'}
-              </Button>
-
-              <div className="text-center space-y-4">
-                <p className="htk-text-muted">
-                  Already have an account?{' '}
-                  <button
-                    type="button"
-                    onClick={() => navigate(`/login/${userType}`)}
-                    className="text-htk-gold hover:text-htk-gold-light underline"
-                  >
-                    Sign in here
-                  </button>
-                </p>
-                
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={() => navigate('/')}
-                  className="htk-border-gold text-htk-gold hover:bg-htk-gold hover:text-black"
+            {userType === 'tradesperson' && (
+              <label style={{ display: 'block', marginBottom: '0.5rem', color: '#D4AF37' }}>
+                Trade/Profession
+                <select
+                  name="trade"
+                  value={formData.trade}
+                  onChange={(e) => handleSelectChange(e.target.value)}
+                  required
+                  style={{
+                    width: '100%',
+                    padding: '12px',
+                    marginTop: '0.5rem',
+                    backgroundColor: '#222',
+                    color: '#D4AF37',
+                    border: '1px solid #D4AF37',
+                    borderRadius: '4px'
+                  }}
                 >
-                  ← Back to Home
-                </Button>
-              </div>
-            </form>
-          </CardContent>
-        </Card>
-      </div>
+                  <option value="">Select your trade</option>
+                  {trades.map(trade => (
+                    <option key={trade} value={trade}>{trade}</option>
+                  ))}
+                </select>
+              </label>
+            )}
 
-      {/* Footer */}
-      <footer className="htk-header border-t htk-border-gold py-6">
-        <div className="htk-container px-6">
-          <div className="text-center">
-            <p className="htk-text-muted text-sm">
-              © 2024 HTK - Handy To Know. Built by trades, for trades.
-            </p>
+            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#D4AF37' }}>
+              Password
+              <input
+                type="password"
+                name="password"
+                placeholder="Create a password"
+                value={formData.password}
+                onChange={handleInputChange}
+                required
+                className="htk-input-real-gold"
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  marginTop: '0.5rem',
+                  backgroundColor: '#222',
+                  color: '#D4AF37',
+                  border: '1px solid #D4AF37',
+                  borderRadius: '4px'
+                }}
+              />
+            </label>
+
+            <label style={{ display: 'block', marginBottom: '1rem', color: '#D4AF37' }}>
+              Confirm Password
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                value={formData.confirmPassword}
+                onChange={handleInputChange}
+                required
+                className="htk-input-real-gold"
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  marginTop: '0.5rem',
+                  backgroundColor: '#222',
+                  color: '#D4AF37',
+                  border: '1px solid #D4AF37',
+                  borderRadius: '4px'
+                }}
+              />
+            </label>
+
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="htk-btn-real-gold"
+              style={{
+                width: '100%',
+                padding: '15px',
+                background: 'linear-gradient(45deg, #B8941F, #D4AF37, #B8941F)',
+                color: '#000',
+                border: 'none',
+                borderRadius: '8px',
+                fontSize: '18px',
+                fontWeight: 'bold',
+                cursor: isLoading ? 'not-allowed' : 'pointer',
+                opacity: isLoading ? 0.7 : 1
+              }}
+            >
+              {isLoading ? 'Creating Account...' : 'Create Account'}
+            </button>
           </div>
+        </form>
+
+        <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+          <button
+            onClick={() => navigate('/')}
+            style={{
+              background: 'transparent',
+              border: '1px solid #D4AF37',
+              color: '#D4AF37',
+              padding: '10px 20px',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}
+          >
+            Back to Home
+          </button>
         </div>
-      </footer>
+      </div>
     </div>
   )
 }

@@ -57,14 +57,14 @@ export default function LandingPageSimple() {
             {/* Logo */}
             <div className="flex items-center space-x-3">
               <img 
-                src="/htk-logo-large.png" 
+                src="/htk-logo-new.png" 
                 alt="HTK Logo" 
                 className="htk-logo-luxury"
                 style={{ height: '60px', width: 'auto' }}
               />
               <div>
                 <h1 className="htk-text-luxury text-2xl font-bold">HTK</h1>
-                <p className="text-gray-400 text-sm">Handy To Know</p>
+                <p className="text-gray-400 text-sm">Connecting Local Trades</p>
               </div>
             </div>
 
@@ -84,8 +84,8 @@ export default function LandingPageSimple() {
               Built by Trades, for Trades
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-              The professional trade platform that puts tradespeople first. Direct connections, 
-              authentic relationships, and tools designed by those who understand the trade.
+              The community-first trade platform that connects skilled professionals with customers. 
+              Building stronger communities through authentic relationships and fair opportunities for all.
             </p>
             
             {/* CTA Buttons */}
@@ -99,25 +99,11 @@ export default function LandingPageSimple() {
               </button>
               <button
                 onClick={() => navigate('/register/tradesperson')}
-                style={{
-                  background: 'transparent',
-                  border: '2px solid #DAA520',
-                  color: '#DAA520',
-                  padding: '15px 30px',
-                  borderRadius: '10px',
-                  fontSize: '18px',
-                  fontWeight: 'bold',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseOver={(e) => {
-                  e.target.style.background = '#DAA520'
-                  e.target.style.color = '#000'
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.background = 'transparent'
-                  e.target.style.color = '#DAA520'
-                }}
+                className="htk-btn-real-gold px-8 py-4 text-lg"
+              >
+                <Hammer className="mr-2 h-5 w-5" />
+                Join as Tradesperson
+              </button>
               >
                 <Wrench className="mr-2 h-5 w-5" style={{ display: 'inline' }} />
                 Join as Tradesperson

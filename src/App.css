@@ -3,6 +3,16 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* HTK Real Gold Color Scheme */
+:root {
+  --htk-gold: #D4AF37;
+  --htk-gold-light: #E6C547;
+  --htk-gold-dark: #B8941F;
+  --htk-black: #000000;
+  --htk-dark-gray: #111111;
+  --htk-medium-gray: #222222;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -502,5 +512,93 @@ body {
   border-color: rgba(218, 165, 32, 0.4);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
               0 0 20px rgba(218, 165, 32, 0.2);
+}
+
+
+
+/* HTK Real Gold Color Classes */
+.htk-text-real-gold {
+  color: var(--htk-gold) !important;
+}
+
+.htk-bg-real-gold {
+  background-color: var(--htk-gold) !important;
+}
+
+.htk-border-real-gold {
+  border-color: var(--htk-gold) !important;
+}
+
+.htk-btn-real-gold {
+  background: linear-gradient(45deg, var(--htk-gold-dark), var(--htk-gold), var(--htk-gold-dark));
+  color: var(--htk-black);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.htk-btn-real-gold:hover {
+  background: linear-gradient(45deg, #8C6A3C, var(--htk-gold-light), #8C6A3C);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(185, 151, 91, 0.3);
+}
+
+.htk-input-real-gold {
+  background-color: var(--htk-medium-gray) !important;
+  color: var(--htk-gold) !important;
+  border: 1px solid var(--htk-gold) !important;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.htk-input-real-gold:focus {
+  outline: none;
+  border-color: var(--htk-gold-light) !important;
+  box-shadow: 0 0 10px rgba(185, 151, 91, 0.3);
+}
+
+/* Override all yellow colors with real gold */
+.text-yellow-400,
+.text-yellow-500,
+.text-yellow-600 {
+  color: var(--htk-gold) !important;
+}
+
+.bg-yellow-400,
+.bg-yellow-500,
+.bg-yellow-600 {
+  background-color: var(--htk-gold) !important;
+}
+
+.border-yellow-400,
+.border-yellow-500,
+.border-yellow-600 {
+  border-color: var(--htk-gold) !important;
+}
+
+/* Update existing HTK classes to use real gold */
+.htk-text-luxury {
+  color: var(--htk-gold) !important;
+}
+
+.htk-btn-luxury {
+  background: linear-gradient(45deg, var(--htk-gold-dark), var(--htk-gold), var(--htk-gold-dark));
+  color: var(--htk-black);
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.htk-btn-luxury:hover {
+  background: linear-gradient(45deg, #8C6A3C, var(--htk-gold-light), #8C6A3C);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(185, 151, 91, 0.3);
 }
 
