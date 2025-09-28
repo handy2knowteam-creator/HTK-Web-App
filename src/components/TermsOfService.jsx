@@ -119,7 +119,17 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-500 mb-4">9. Modifications</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">9. Community Profit Sharing Program</h2>
+                <p className="text-gray-300 leading-relaxed">
+                  HTK is committed to supporting local communities. Once the platform achieves £100,000 in cumulative profits, 
+                  50% of all subsequent profits will be distributed to communities in the service areas where our platform operates. 
+                  This community investment program is designed to support local infrastructure, training programs, and community development initiatives. 
+                  Distribution methods and community selection criteria will be determined by HTK management and communicated to users annually.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">10. Modifications</h2>
                 <p className="text-gray-300 leading-relaxed">
                   HTK reserves the right to modify these terms at any time. Users will be notified of significant changes, 
                   and continued use of the platform constitutes acceptance of modified terms.
@@ -127,7 +137,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-yellow-500 mb-4">10. Contact Information</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-4">11. Contact Information</h2>
                 <p className="text-gray-300 leading-relaxed">
                   For questions about these Terms of Service, please contact us at legal@handytoknow.com or through our support system.
                 </p>

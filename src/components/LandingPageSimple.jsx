@@ -44,7 +44,7 @@ export default function LandingPageSimple() {
     {
       icon: Users,
       title: 'Community First',
-      description: 'Join the founding community of professional tradespeople'
+      description: 'Join the founding community of professional tradespeople*'
     }
   ]
 
@@ -85,7 +85,7 @@ export default function LandingPageSimple() {
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
               The community-first trade platform that connects skilled professionals with customers. 
-              Building stronger communities through authentic relationships and fair opportunities for all.
+              Building stronger communities through authentic relationships and fair opportunities for all.*
             </p>
             
             {/* CTA Buttons */}
