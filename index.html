@@ -1,107 +1,14 @@
-<!DOCTYPE html>
-<html lang="en-GB">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HTK — Connecting Local Trades</title>
-  <meta name="description" content="HTK (Handy To Know): Connecting local trades with customers. No commissions. Community-first. Fast, fair, and local." />
-  <meta name="theme-color" content="#000000" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --gold:#D4AF37;
-      --gold-dark:#B8941F;
-      --bg:#000;
-      --panel:#111;
-      --text:#F4F4F4;
-      --radius:14px;
-      --shadow:0 8px 24px rgba(0,0,0,.45);
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
-    a{color:var(--gold);text-decoration:none}
-    .container{max-width:1120px;margin:0 auto;padding:0 20px}
-    .btn{display:inline-block;padding:14px 18px;border-radius:12px;border:1px solid rgba(212,175,55,.5);background:linear-gradient(180deg, var(--gold), var(--gold-dark));color:#111;font-weight:700;box-shadow:var(--shadow)}
-    .card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px}
-    header{background:rgba(0,0,0,.8);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.06)}
-    header .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    header .logo{display:flex;align-items:center;gap:10px;font-weight:900}
-    header .logo__mark{width:34px;height:34px;border-radius:8px;background:linear-gradient(180deg,var(--gold),var(--gold-dark));display:grid;place-items:center;color:#111;font-weight:900}
-    h1{font-size:clamp(28px,5vw,54px);line-height:1.02;margin:0}
-    h2{margin-top:0}
-    form input,form textarea{width:100%;padding:12px;margin-bottom:10px;background:#222;border:1px solid rgba(212,175,55,.3);border-radius:10px;color:#fff}
-    form button{cursor:pointer}
-  </style>
-</head>
-<body>
-<header>
-  <div class="container nav">
-    <div class="logo">
-      <div class="logo__mark">H2K</div> HTK — Connecting Local Trades
-    </div>
-    <nav>
-      <a href="#for-customers">Customers</a> |
-      <a href="#for-trades">Trades</a> |
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<section class="container" style="padding:60px 0">
-  <h1>Find &amp; Hire Local Trades Instantly</h1>
-  <p>HTK (Handy To Know) connects customers to trusted local tradespeople. No commissions. No hassle. Just fair work, fast.</p>
-  <a class="btn" href="#for-customers">Post a Job</a>
-  <a class="btn" href="#for-trades">Join as a Trade</a>
-</section>
-
-<section id="for-customers" class="container">
-  <h2>Customers: Post a Job</h2>
-  <div class="card">
-    <form action="https://formsubmit.co/handy2knowteam@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="New Customer Job via HTK">
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="email" placeholder="Your email" required>
-      <input type="text" name="location" placeholder="Location" required>
-      <textarea name="job" rows="5" placeholder="Describe the job..." required></textarea>
-      <button class="btn" type="submit">Submit Job</button>
-    </form>
-  </div>
-</section>
-
-<section id="for-trades" class="container">
-  <h2>Trades: Sign Up</h2>
-  <div class="card">
-    <form action="https://formsubmit.co/handy2knowteam@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="New Trade Signup via HTK">
-      <input type="text" name="trade_name" placeholder="Business/Trade Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="text" name="phone" placeholder="Phone" required>
-      <input type="text" name="trade_type" placeholder="Trade Type (Plumbing, Electrical...)" required>
-      <button class="btn" type="submit">Join HTK</button>
-    </form>
-  </div>
-</section>
-
-<section id="contact" class="container">
-  <h2>Contact / Legal</h2>
-  <p>Email: <a href="mailto:handy2knowteam@gmail.com">handy2knowteam@gmail.com</a></p>
-  <p><a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms</a></p>
-</section>
-
-<footer style="text-align:center;padding:20px;color:#888;border-top:1px solid rgba(255,255,255,.06)">
-  &copy; 2025 HTK — Connecting Local Trades
-</footer>
-
-</body>
-</html><!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTK - Handy To Know | Connect with Skilled Tradespeople</title>
+    <meta name="description" content="HTK (Handy To Know): Connecting local trades with customers. Built by trades, for trades. Fair pricing and authentic relationships." />
+    <meta name="theme-color" content="#000000" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="root"></div>
