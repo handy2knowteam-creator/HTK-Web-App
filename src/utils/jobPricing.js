@@ -33,27 +33,27 @@ export const COMPLEXITY_LEVELS = {
   SPECIALIST: 'specialist'
 }
 
-// Base credit costs by job category
+// Base credit costs by job category (increased for realistic pricing)
 const CATEGORY_BASE_CREDITS = {
-  [JOB_CATEGORIES.ELECTRICAL]: 2,
-  [JOB_CATEGORIES.PLUMBING]: 2,
-  [JOB_CATEGORIES.HEATING]: 3,
-  [JOB_CATEGORIES.ROOFING]: 3,
-  [JOB_CATEGORIES.CARPENTRY]: 2,
-  [JOB_CATEGORIES.PAINTING]: 1,
-  [JOB_CATEGORIES.LANDSCAPING]: 2,
-  [JOB_CATEGORIES.GENERAL]: 1
+  [JOB_CATEGORIES.ELECTRICAL]: 8,
+  [JOB_CATEGORIES.PLUMBING]: 8,
+  [JOB_CATEGORIES.HEATING]: 10,
+  [JOB_CATEGORIES.ROOFING]: 12,
+  [JOB_CATEGORIES.CARPENTRY]: 8,
+  [JOB_CATEGORIES.PAINTING]: 6,
+  [JOB_CATEGORIES.LANDSCAPING]: 8,
+  [JOB_CATEGORIES.GENERAL]: 5
 }
 
-// Budget-based multipliers
+// Budget-based multipliers (increased for realistic pricing)
 const BUDGET_MULTIPLIERS = {
   '0-200': 1.0,
-  '200-500': 1.5,
-  '500-1000': 2.0,
-  '1000-2500': 3.0,
-  '2500-5000': 4.5,
-  '5000-10000': 6.0,
-  '10000+': 8.0
+  '200-500': 1.8,
+  '500-1000': 2.5,
+  '1000-2500': 3.5,
+  '2500-5000': 5.0,
+  '5000-10000': 7.0,
+  '10000+': 10.0
 }
 
 // Urgency multipliers
@@ -117,8 +117,8 @@ export function calculateJobCredits(job) {
     complexityMultiplier
   )
 
-  // Cap between 1 and 20 credits
-  return Math.max(1, Math.min(20, totalCredits))
+  // Cap between 5 and 150 credits (increased for realistic pricing)
+  return Math.max(5, Math.min(150, totalCredits))
 }
 
 /**

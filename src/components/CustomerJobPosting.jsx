@@ -56,8 +56,8 @@ export default function CustomerJobPosting() {
     const updatedData = { ...formData, [name]: value }
     setFormData(updatedData)
     
-    // Calculate estimated credits when budget or urgency changes
-    if (name === 'budget' || name === 'urgency') {
+    // Calculate estimated credits when budget, urgency, or category changes
+    if (name === 'budget' || name === 'urgency' || name === 'category') {
       updateEstimatedCredits(updatedData)
     }
   }
@@ -66,18 +66,31 @@ export default function CustomerJobPosting() {
     const updatedData = { ...formData, [name]: value }
     setFormData(updatedData)
     
-    if (name === 'urgency') {
+    // Calculate estimated credits when urgency or category changes
+    if (name === 'urgency' || name === 'category') {
       updateEstimatedCredits(updatedData)
     }
   }
 
   const updateEstimatedCredits = (data) => {
-    if (data.budget && data.urgency) {
+    if (data.budget && data.urgency && data.category) {
+      // Convert budget to range format
+      const budget = parseFloat(data.budget)
+      let budgetRange = '0-200'
+      
+      if (budget >= 10000) budgetRange = '10000+'
+      else if (budget >= 5000) budgetRange = '5000-10000'
+      else if (budget >= 2500) budgetRange = '2500-5000'
+      else if (budget >= 1000) budgetRange = '1000-2500'
+      else if (budget >= 500) budgetRange = '500-1000'
+      else if (budget >= 200) budgetRange = '200-500'
+      
       const credits = calculateJobCredits({
-        budget: parseFloat(data.budget),
+        category: data.category.toLowerCase(),
+        budget: budgetRange,
         urgency: data.urgency,
-        location: data.location,
-        category: data.category
+        location: 'suburban', // Default location type
+        complexity: 'basic' // Default complexity
       })
       setEstimatedCredits(credits)
     }

@@ -34,7 +34,7 @@ export default function LandingPageSimple() {
     {
       icon: Star,
       title: 'Fair Platform',
-      description: 'No commission fees - keep what you earn'
+      description: 'Transparent pricing and honest connections between trades and customers'
     },
     {
       icon: Clock,
@@ -84,8 +84,8 @@ export default function LandingPageSimple() {
               Built by Trades, for Trades
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-              The professional trade platform that puts tradespeople first. No commission fees, 
-              authentic connections, and tools designed by those who understand the trade.
+              The professional trade platform that puts tradespeople first. Direct connections, 
+              authentic relationships, and tools designed by those who understand the trade.
             </p>
             
             {/* CTA Buttons */}

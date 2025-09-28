@@ -12,6 +12,7 @@ import CustomerJobPosting from './components/CustomerJobPosting'
 import TradespersonJobBrowsing from './components/TradespersonJobBrowsing'
 import JobRequestForm from './components/JobRequestForm'
 import SubscriptionManager from './components/SubscriptionManager'
+import StripeIntegration from './components/StripeIntegration'
 import AdminDashboard from './components/AdminDashboard'
 import ComingSoon from './components/ComingSoon'
 import TermsOfService from './components/TermsOfService'
@@ -70,6 +71,7 @@ function AppContent() {
                   <Route path="/dashboard" element={<CustomerDashboard />} />
                   <Route path="/post-job" element={<CustomerJobPosting />} />
                   <Route path="/job-request" element={<JobRequestForm />} />
+                  <Route path="/credits" element={<StripeIntegration />} />
                   <Route path="/" element={<Navigate to="/dashboard" replace />} />
                 </>
               ) : (
@@ -77,6 +79,7 @@ function AppContent() {
                   <Route path="/dashboard" element={<TradespersonDashboard />} />
                   <Route path="/browse-jobs" element={<TradespersonJobBrowsing />} />
                   <Route path="/subscription" element={<SubscriptionManager />} />
+                  <Route path="/credits" element={<StripeIntegration />} />
                   <Route path="/" element={<Navigate to="/dashboard" replace />} />
                 </>
               )}
