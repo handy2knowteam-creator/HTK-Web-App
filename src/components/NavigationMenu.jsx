@@ -18,7 +18,8 @@ import {
   Star,
   Settings,
   HelpCircle,
-  Search,
+  Award,
+  Heart,
   Plus
 } from 'lucide-react'
 
@@ -41,11 +42,12 @@ export default function NavigationMenu() {
     },
     {
       title: 'Information',
-      icon: BookOpen,
+      icon: Info,
       items: [
         { name: 'About HTK', path: '/about', icon: Info },
-        { name: 'Platform Features', path: '/coming-soon', icon: Settings },
-        { name: 'Success Stories', path: '/coming-soon', icon: Star },
+        { name: 'Community Projects', path: '/community-projects', icon: Heart },
+        { name: 'Trade Collaboration', path: '/trade-collaboration', icon: Users },
+        { name: 'Success Stories', path: '/coming-soon', icon: Award },
         { name: 'FAQ', path: '/coming-soon', icon: HelpCircle }
       ]
     },

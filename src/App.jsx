@@ -23,6 +23,8 @@ import HowItWorks from './components/HowItWorks'
 import AboutHTK from './components/AboutHTK'
 import PricingCredits from './components/PricingCredits'
 import ThankYouSimple from './components/ThankYouSimple'
+import CommunityProjects from './components/CommunityProjects'
+import TradeCollaboration from './components/TradeCollaboration'
 
 // Context
 import { AuthProvider, useAuth } from './contexts/AuthContext'
@@ -68,6 +70,8 @@ function AppContent() {
               <Route path="/about" element={<AboutHTK />} />
               <Route path="/pricing" element={<PricingCredits />} />
               <Route path="/thank-you" element={<ThankYouSimple />} />
+              <Route path="/community-projects" element={<CommunityProjects />} />
+              <Route path="/trade-collaboration" element={<TradeCollaboration />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
@@ -99,6 +103,8 @@ function AppContent() {
               <Route path="/about" element={<AboutHTK />} />
               <Route path="/pricing" element={<PricingCredits />} />
               <Route path="/thank-you" element={<ThankYouSimple />} />
+              <Route path="/community-projects" element={<CommunityProjects />} />
+              <Route path="/trade-collaboration" element={<TradeCollaboration />} />
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/dashboard" replace />} />
