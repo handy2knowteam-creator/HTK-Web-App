@@ -80,6 +80,7 @@ function AppContent() {
               <Route path="/products" element={<ProductShowcase />} />
               <Route path="/investment-partnership" element={<InvestmentPartnership />} />
               <Route path="/faq" element={<FAQ />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
