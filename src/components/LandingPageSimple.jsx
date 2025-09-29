@@ -21,8 +21,8 @@ export default function LandingPageSimple() {
   const stats = [
     { number: 'NEW', label: 'Platform Launching' },
     { number: 'BETA', label: 'Early Access' },
-    { number: '2025', label: 'Built for Modern Trades' },
-    { number: 'REAL', label: 'Authentic Community' }
+    { number: '2026', label: 'Built for Modern Trades' },
+    { number: '24/7', label: 'Community Support' }
   ]
 
   const features = [
@@ -156,7 +156,7 @@ export default function LandingPageSimple() {
             <span className="htk-text-luxury text-xl font-bold">HTK - Handy To Know</span>
           </div>
           <p className="text-gray-400 mb-4">Built by trades, for trades</p>
-          <p className="text-gray-500 text-sm">© 2024 HTK Platform. Launching Soon.</p>
+          <p className="text-gray-500 text-sm">© 2026 HTK Platform. Early Access Available.</p>
         </div>
       </footer>
     </div>
