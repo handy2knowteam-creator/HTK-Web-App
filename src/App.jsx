@@ -24,6 +24,7 @@ import LiveCalendarSystem from './components/LiveCalendarSystem'
 import AdminDashboard from './components/AdminDashboard'
 import AdminLogin from './components/AdminLoginWorking'
 import AdminDashboardComplete from './components/AdminDashboardComplete'
+import SecureAdminSystem from './components/SecureAdminSystem'
 import ComingSoon from './components/ComingSoon'
 import TermsOfService from './components/TermsOfService'
 import PrivacyPolicy from './components/PrivacyPolicy'
@@ -84,7 +85,7 @@ function AppContent() {
               <Route path="/register/:userType" element={<RegisterScreen />} />
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/admin/login" element={<AdminLogin />} />
-              <Route path="/admin/dashboard" element={<AdminDashboardComplete />} />
+              <Route path="/admin/dashboard" element={<SecureAdminSystem />} />
               <Route path="/terms" element={<TermsOfService />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/community-guidelines" element={<CommunityGuidelines />} />
