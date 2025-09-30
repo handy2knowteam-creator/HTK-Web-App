@@ -16,6 +16,9 @@ import StripeIntegration from './components/StripeIntegration'
 import StripePaymentComplete from './components/StripePaymentComplete'
 import JobBiddingSystemComplete from './components/JobBiddingSystemComplete'
 import TradeForumComplete from './components/TradeForumComplete'
+import ProfessionalVerificationSystem from './components/ProfessionalVerificationSystem'
+import GroupBuyingSystem from './components/GroupBuyingSystem'
+import MobilePWASystem from './components/MobilePWASystem'
 import AdminDashboard from './components/AdminDashboard'
 import AdminLogin from './components/AdminLoginWorking'
 import AdminDashboardComplete from './components/AdminDashboardComplete'
@@ -95,6 +98,9 @@ function AppContent() {
               <Route path="/credits-purchase" element={<StripePaymentComplete />} />
               <Route path="/job-bidding" element={<JobBiddingSystemComplete />} />
               <Route path="/trade-forum" element={<TradeForumComplete />} />
+              <Route path="/professional-verification" element={<ProfessionalVerificationSystem />} />
+              <Route path="/group-buying" element={<GroupBuyingSystem />} />
+              <Route path="/mobile-app" element={<MobilePWASystem />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
