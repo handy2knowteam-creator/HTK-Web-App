@@ -20,6 +20,8 @@ import ComingSoon from './components/ComingSoon'
 import TermsOfService from './components/TermsOfService'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import CommunityGuidelines from './components/CommunityGuidelines'
+import CommunityHub from './components/CommunityHub'
+import JobManagementSystem from './components/JobManagementSystem'
 import SupportPage from './components/SupportPage'
 import HowItWorks from './components/HowItWorks'
 import AboutHTK from './components/AboutHTK'
@@ -85,6 +87,8 @@ function AppContent() {
               <Route path="/investment-partnership" element={<InvestmentPartnership />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/community-hub" element={<CommunityHub />} />
+              <Route path="/job-management" element={<JobManagementSystem />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
