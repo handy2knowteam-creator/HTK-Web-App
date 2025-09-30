@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css'
 
 // Components
-import LandingPage from './components/LandingPageWorking'
+import LandingPage from './components/LandingPageBulletproof'
 import LoginScreen from './components/LoginScreen'
 import RegisterScreen from './components/RegisterScreen'
 import CustomerDashboard from './components/CustomerDashboard'
