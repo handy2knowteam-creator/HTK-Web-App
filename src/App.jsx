@@ -14,6 +14,8 @@ import JobRequestForm from './components/JobRequestForm'
 import SubscriptionManager from './components/SubscriptionManager'
 import StripeIntegration from './components/StripeIntegration'
 import AdminDashboard from './components/AdminDashboard'
+import AdminLogin from './components/AdminLogin'
+import AdminDashboardComplete from './components/AdminDashboardComplete'
 import ComingSoon from './components/ComingSoon'
 import TermsOfService from './components/TermsOfService'
 import PrivacyPolicy from './components/PrivacyPolicy'
@@ -66,6 +68,8 @@ function AppContent() {
               <Route path="/login/:userType" element={<LoginScreen />} />
               <Route path="/register/:userType" element={<RegisterScreen />} />
               <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/admin/login" element={<AdminLogin />} />
+              <Route path="/admin/dashboard" element={<AdminDashboardComplete />} />
               <Route path="/terms" element={<TermsOfService />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/community-guidelines" element={<CommunityGuidelines />} />
