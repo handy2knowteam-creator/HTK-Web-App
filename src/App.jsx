@@ -13,6 +13,9 @@ import TradespersonJobBrowsing from './components/TradespersonJobBrowsing'
 import JobRequestForm from './components/JobRequestForm'
 import SubscriptionManager from './components/SubscriptionManager'
 import StripeIntegration from './components/StripeIntegration'
+import StripePaymentComplete from './components/StripePaymentComplete'
+import JobBiddingSystemComplete from './components/JobBiddingSystemComplete'
+import TradeForumComplete from './components/TradeForumComplete'
 import AdminDashboard from './components/AdminDashboard'
 import AdminLogin from './components/AdminLoginWorking'
 import AdminDashboardComplete from './components/AdminDashboardComplete'
@@ -89,6 +92,9 @@ function AppContent() {
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/community-hub" element={<CommunityHub />} />
               <Route path="/job-management" element={<JobManagementSystem />} />
+              <Route path="/credits-purchase" element={<StripePaymentComplete />} />
+              <Route path="/job-bidding" element={<JobBiddingSystemComplete />} />
+              <Route path="/trade-forum" element={<TradeForumComplete />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
