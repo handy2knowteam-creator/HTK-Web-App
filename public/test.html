@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTK Test Page</title>
+    <style>
+        body {
+            background: #000;
+            color: #B9975B;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            color: #B9975B;
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 50px 0;
+        }
+        .message {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+        .btn {
+            background: linear-gradient(45deg, #8C6A3C, #B9975B, #8C6A3C);
+            color: #000;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .btn:hover {
+            background: linear-gradient(45deg, #6b4e2b, #a0804b, #6b4e2b);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">HTK</div>
+    <div class="message">Handy To Know - Test Page</div>
+    <div class="message">Built by trades, for trades</div>
+    
+    <button class="btn" onclick="window.location.href='/'">Go to Main Site</button>
+    <button class="btn" onclick="testReact()">Test React</button>
+    
+    <div id="status" style="margin-top: 30px; font-size: 1.2rem;"></div>
+    
+    <script>
+        function testReact() {
+            document.getElementById('status').innerHTML = 'Testing React app...';
+            
+            // Check if React root exists
+            const root = document.querySelector('#root');
+            if (root) {
+                document.getElementById('status').innerHTML = 'React root found. Checking content...';
+                
+                setTimeout(() => {
+                    if (root.innerHTML.trim() === '') {
+                        document.getElementById('status').innerHTML = '❌ React root is empty - JavaScript/React issue';
+                    } else {
+                        document.getElementById('status').innerHTML = '✅ React content found';
+                    }
+                }, 1000);
+            } else {
+                document.getElementById('status').innerHTML = '❌ React root not found';
+            }
+        }
+        
+        // Auto-test on load
+        setTimeout(testReact, 1000);
+    </script>
+</body>
+</html>
