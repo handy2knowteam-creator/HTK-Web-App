@@ -23,10 +23,28 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Custom domains configuration
+# Both handy2know.com and handy2know.co.uk should point to this deployment
+
 # Environment variables for production
 [context.production.environment]
   REACT_APP_ENV = "production"
+  REACT_APP_DOMAIN_PRIMARY = "handy2know.com"
+  REACT_APP_DOMAIN_SECONDARY = "handy2know.co.uk"
 
 [context.deploy-preview.environment]
   REACT_APP_ENV = "preview"
+
+# Domain redirects to ensure both domains work
+[[redirects]]
+  from = "https://www.handy2know.com/*"
+  to = "https://handy2know.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.handy2know.co.uk/*"
+  to = "https://handy2know.co.uk/:splat"
+  status = 301
+  force = true
 

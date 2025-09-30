@@ -104,10 +104,6 @@ export default function LandingPageSimple() {
                 <Hammer className="mr-2 h-5 w-5" />
                 Join as Tradesperson
               </button>
-              >
-                <Wrench className="mr-2 h-5 w-5" style={{ display: 'inline' }} />
-                Join as Tradesperson
-              </button>
             </div>
 
             {/* Stats */}
