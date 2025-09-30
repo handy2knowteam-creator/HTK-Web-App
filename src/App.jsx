@@ -41,6 +41,9 @@ import TradespersonOfTheMonth from './components/TradespersonOfTheMonth'
 import ProductShowcase from './components/ProductShowcase'
 import InvestmentPartnership from './components/InvestmentPartnership'
 import FAQ from './components/FAQ'
+import PeerEndorsementSystem from './components/PeerEndorsementSystem'
+import CommunityProjectsDashboard from './components/CommunityProjectsDashboard'
+import { AboutHTK as AboutHTKPage, FAQ as FAQPage, CommunityGuidelines as CommunityGuidelinesPage, InvestmentPartnership as InvestmentPartnershipPage, Pricing as PricingPage } from './components/AllMissingPages'
 
 // Context
 import { AuthProvider, useAuth } from './contexts/AuthContext'
@@ -93,8 +96,13 @@ function AppContent() {
               <Route path="/tradesperson-of-the-month" element={<TradespersonOfTheMonth />} />
               <Route path="/products" element={<ProductShowcase />} />
               <Route path="/investment-partnership" element={<InvestmentPartnership />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/faq" element={<FAQPage />} />
+              <Route path="/about-htk" element={<AboutHTKPage />} />
+              <Route path="/community-guidelines-page" element={<CommunityGuidelinesPage />} />
+              <Route path="/investment-partnership-page" element={<InvestmentPartnershipPage />} />
+              <Route path="/pricing-page" element={<PricingPage />} />
+              <Route path="/peer-endorsements" element={<PeerEndorsementSystem />} />
+              <Route path="/community-projects-dashboard" element={<CommunityProjectsDashboard />} />
               <Route path="/community-hub" element={<CommunityHub />} />
               <Route path="/job-management" element={<JobManagementSystem />} />
               <Route path="/credits-purchase" element={<StripePaymentComplete />} />
