@@ -46,6 +46,9 @@ import PeerEndorsementSystem from './components/PeerEndorsementSystem'
 import CommunityProjectsDashboard from './components/CommunityProjectsDashboard'
 import SearchSystem from './components/SearchSystem'
 import JobPostingSystem from './components/JobPostingSystem'
+import DirectMessagingComplete from './components/DirectMessagingComplete'
+import PublicTradespersonDirectory from './components/PublicTradespersonDirectory'
+import QuoteManagementSystem from './components/QuoteManagementSystem'
 import { AboutHTK as AboutHTKPage, FAQ as FAQPage, CommunityGuidelines as CommunityGuidelinesPage, InvestmentPartnership as InvestmentPartnershipPage, Pricing as PricingPage } from './components/AllMissingPages'
 
 // Context
@@ -118,6 +121,9 @@ function AppContent() {
               <Route path="/live-calendar" element={<LiveCalendarSystem />} />
               <Route path="/search" element={<SearchSystem />} />
               <Route path="/post-job" element={<JobPostingSystem />} />
+              <Route path="/directory" element={<PublicTradespersonDirectory />} />
+              <Route path="/quotes" element={<QuoteManagementSystem />} />
+              <Route path="/messages" element={<DirectMessagingComplete />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>

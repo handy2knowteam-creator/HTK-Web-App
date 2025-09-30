@@ -10,7 +10,7 @@ import {
 // Your Stripe Account Configuration
 const STRIPE_CONFIG = {
   accountId: 'acct_1S7CKwGFrHVFmHVw', // Your Stripe Account ID
-  publishableKey: 'pk_live_51S7CKwGFrHVFmHVwXXXXXXXXXX', // Replace with your live publishable key
+  publishableKey: 'pk_live_51S7CKwGFrHVFmHVwZs7hKnhxBH5PYKzFS4aU1ltM1fCZ3yRi11PxQRBmSbGzVzg4M0udZyuVaoBVSfSFsf5ZQjfL00FrvJZo0E', // Your live publishable key
   webhookEndpoint: 'https://handy2know.com/api/stripe/webhook'
 };
 
