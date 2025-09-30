@@ -48,6 +48,8 @@ import SearchSystem from './components/SearchSystem'
 import JobPostingSystem from './components/JobPostingSystem'
 import DirectMessagingComplete from './components/DirectMessagingComplete'
 import PublicTradespersonDirectory from './components/PublicTradespersonDirectory'
+import PlatformHealthCheck from './components/PlatformHealthCheck'
+import PaymentTestSuite from './components/PaymentTestSuite'
 import QuoteManagementSystem from './components/QuoteManagementSystem'
 import { AboutHTK as AboutHTKPage, FAQ as FAQPage, CommunityGuidelines as CommunityGuidelinesPage, InvestmentPartnership as InvestmentPartnershipPage, Pricing as PricingPage } from './components/AllMissingPages'
 
@@ -124,6 +126,8 @@ function AppContent() {
               <Route path="/directory" element={<PublicTradespersonDirectory />} />
               <Route path="/quotes" element={<QuoteManagementSystem />} />
               <Route path="/messages" element={<DirectMessagingComplete />} />
+              <Route path="/health-check" element={<PlatformHealthCheck />} />
+              <Route path="/test-payments" element={<PaymentTestSuite />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
