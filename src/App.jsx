@@ -19,6 +19,8 @@ import TradeForumComplete from './components/TradeForumComplete'
 import ProfessionalVerificationSystem from './components/ProfessionalVerificationSystem'
 import GroupBuyingSystem from './components/GroupBuyingSystem'
 import MobilePWASystem from './components/MobilePWASystem'
+import SmartQuoteSystem from './components/SmartQuoteSystem'
+import LiveCalendarSystem from './components/LiveCalendarSystem'
 import AdminDashboard from './components/AdminDashboard'
 import AdminLogin from './components/AdminLoginWorking'
 import AdminDashboardComplete from './components/AdminDashboardComplete'
@@ -101,6 +103,8 @@ function AppContent() {
               <Route path="/professional-verification" element={<ProfessionalVerificationSystem />} />
               <Route path="/group-buying" element={<GroupBuyingSystem />} />
               <Route path="/mobile-app" element={<MobilePWASystem />} />
+              <Route path="/smart-quote" element={<SmartQuoteSystem />} />
+              <Route path="/live-calendar" element={<LiveCalendarSystem />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
