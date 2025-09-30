@@ -43,6 +43,8 @@ import InvestmentPartnership from './components/InvestmentPartnership'
 import FAQ from './components/FAQ'
 import PeerEndorsementSystem from './components/PeerEndorsementSystem'
 import CommunityProjectsDashboard from './components/CommunityProjectsDashboard'
+import SearchSystem from './components/SearchSystem'
+import JobPostingSystem from './components/JobPostingSystem'
 import { AboutHTK as AboutHTKPage, FAQ as FAQPage, CommunityGuidelines as CommunityGuidelinesPage, InvestmentPartnership as InvestmentPartnershipPage, Pricing as PricingPage } from './components/AllMissingPages'
 
 // Context
@@ -113,6 +115,8 @@ function AppContent() {
               <Route path="/mobile-app" element={<MobilePWASystem />} />
               <Route path="/smart-quote" element={<SmartQuoteSystem />} />
               <Route path="/live-calendar" element={<LiveCalendarSystem />} />
+              <Route path="/search" element={<SearchSystem />} />
+              <Route path="/post-job" element={<JobPostingSystem />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
