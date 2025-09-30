@@ -20,9 +20,9 @@ export default function LandingPageSimple() {
 
   const stats = [
     { number: 'NEW', label: 'Platform Launching' },
-    { number: 'BETA', label: 'Early Access Available' },
-    { number: '2024', label: 'Built for Modern Trades' },
-    { number: '24/7', label: 'Platform Support' }
+    { number: 'BETA', label: 'Early Access' },
+    { number: '2026', label: 'Built for Modern Trades' },
+    { number: '24/7', label: 'Community Support' }
   ]
 
   const features = [
@@ -44,7 +44,7 @@ export default function LandingPageSimple() {
     {
       icon: Users,
       title: 'Community First',
-      description: 'Join the founding community of professional tradespeople'
+      description: 'Join the founding community of professional tradespeople*'
     }
   ]
 
@@ -85,7 +85,7 @@ export default function LandingPageSimple() {
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
               The community-first trade platform that connects skilled professionals with customers. 
-              Building stronger communities through authentic relationships and fair opportunities for all.
+              Building stronger communities through authentic relationships and fair opportunities for all.*
             </p>
             
             {/* CTA Buttons */}
@@ -156,7 +156,7 @@ export default function LandingPageSimple() {
             <span className="htk-text-luxury text-xl font-bold">HTK - Handy To Know</span>
           </div>
           <p className="text-gray-400 mb-4">Built by trades, for trades</p>
-          <p className="text-gray-500 text-sm">© 2024 HTK Platform. Launching Soon.</p>
+          <p className="text-gray-500 text-sm">© 2026 HTK Platform. Early Access Available.</p>
         </div>
       </footer>
     </div>

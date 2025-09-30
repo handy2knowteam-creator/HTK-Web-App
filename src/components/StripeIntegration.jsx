@@ -181,10 +181,10 @@ export default function StripeIntegration() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <header className="border-b border-yellow-500/20 bg-gray-900/50">
+      <header className="htk-header-luxury">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-yellow-500 mb-4">HTK Credit Packages</h1>
+            <h1 className="text-4xl font-bold htk-text-luxury mb-4">HTK Credit Packages</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Choose the perfect credit package for your trade business. All payments processed securely through Stripe.
             </p>
@@ -199,11 +199,11 @@ export default function StripeIntegration() {
           {creditPackages.map((pkg) => (
             <Card 
               key={pkg.id} 
-              className={`bg-gray-900 ${pkg.color} relative ${pkg.popular ? 'ring-2 ring-yellow-500 shadow-lg shadow-yellow-500/20' : 'border-gray-700'}`}
+              className={`htk-card-luxury relative ${pkg.popular ? 'ring-2 ring-htk-gold shadow-lg' : ''}`}
             >
               {pkg.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-yellow-500 text-black font-semibold px-4 py-1">
+                  <Badge className="bg-htk-gold text-black font-semibold px-4 py-1">
                     MOST POPULAR
                   </Badge>
                 </div>
@@ -211,13 +211,13 @@ export default function StripeIntegration() {
               
               <CardHeader className="text-center pb-4">
                 <div className="flex justify-center mb-4">
-                  <div className="bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full p-3">
+                  <div className="bg-gradient-to-br from-htk-gold to-htk-gold-dark rounded-full p-3">
                     <div className="text-black">
                       {pkg.icon}
                     </div>
                   </div>
                 </div>
-                <CardTitle className="text-yellow-500 text-xl">{pkg.name}</CardTitle>
+                <CardTitle className="htk-text-luxury text-xl">{pkg.name}</CardTitle>
                 <div className="mt-4">
                   <div className="flex items-center justify-center space-x-2">
                     <span className="text-3xl font-bold text-white">£{pkg.price}</span>
@@ -225,7 +225,7 @@ export default function StripeIntegration() {
                       <span className="text-lg text-gray-400 line-through">£{pkg.originalPrice}</span>
                     )}
                   </div>
-                  <div className="text-yellow-500 text-sm mt-1">{pkg.credits} Credits</div>
+                  <div className="htk-text-luxury text-sm mt-1">{pkg.credits} Credits</div>
                   {pkg.savings && (
                     <div className="text-green-400 text-xs mt-1">Save £{pkg.savings}</div>
                   )}
@@ -245,7 +245,7 @@ export default function StripeIntegration() {
                 <Button
                   onClick={() => handlePurchase(pkg)}
                   disabled={isLoading}
-                  className={`w-full bg-yellow-500 hover:bg-yellow-600 text-black font-semibold ${pkg.popular ? 'shadow-lg shadow-yellow-500/20' : ''}`}
+                  className={`w-full htk-btn-luxury ${pkg.popular ? 'shadow-lg' : ''}`}
                 >
                   {isLoading && selectedPlan === pkg.id ? (
                     <div className="flex items-center">
@@ -267,9 +267,9 @@ export default function StripeIntegration() {
 
         {/* Pay As You Go Option */}
         <div className="max-w-2xl mx-auto mb-12">
-          <Card className="bg-gray-900 border-gray-700">
+          <Card className="htk-card-luxury">
             <CardHeader className="text-center">
-              <CardTitle className="text-yellow-500 text-xl">Pay As You Go</CardTitle>
+              <CardTitle className="htk-text-luxury text-xl">Pay As You Go</CardTitle>
               <p className="text-gray-300">Perfect for occasional jobs</p>
             </CardHeader>
             <CardContent className="text-center">
@@ -293,7 +293,7 @@ export default function StripeIntegration() {
               </ul>
               <Button
                 onClick={handlePayAsYouGo}
-                className="bg-gray-700 hover:bg-gray-600 text-white border border-gray-600"
+                className="htk-btn-real-gold"
               >
                 <CreditCard className="h-4 w-4 mr-2" />
                 Buy Credits
@@ -305,9 +305,9 @@ export default function StripeIntegration() {
 
         {/* Stripe Security Information */}
         <div className="text-center">
-          <Card className="bg-gray-900 border-gray-700 max-w-4xl mx-auto">
+          <Card className="htk-card-luxury max-w-4xl mx-auto">
             <CardHeader>
-              <CardTitle className="text-yellow-500 flex items-center justify-center">
+              <CardTitle className="htk-text-luxury flex items-center justify-center">
                 <Shield className="h-6 w-6 mr-2" />
                 Secure Payment Processing
               </CardTitle>
@@ -333,7 +333,7 @@ export default function StripeIntegration() {
                   <p className="text-xs text-gray-400">Compliant</p>
                 </div>
                 <div className="text-center">
-                  <div className="bg-yellow-500 rounded-lg p-3 mb-2 inline-block">
+                  <div className="bg-htk-gold rounded-lg p-3 mb-2 inline-block">
                     <span className="text-black font-bold text-sm">HTK</span>
                   </div>
                   <p className="text-xs text-gray-400">Guaranteed</p>

@@ -19,6 +19,16 @@ import TermsOfService from './components/TermsOfService'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import CommunityGuidelines from './components/CommunityGuidelines'
 import SupportPage from './components/SupportPage'
+import HowItWorks from './components/HowItWorks'
+import AboutHTK from './components/AboutHTK'
+import PricingCredits from './components/PricingCredits'
+import ThankYouSimple from './components/ThankYouSimple'
+import CommunityProjects from './components/CommunityProjects'
+import TradeCollaboration from './components/TradeCollaboration'
+import TradespersonOfTheMonth from './components/TradespersonOfTheMonth'
+import ProductShowcase from './components/ProductShowcase'
+import InvestmentPartnership from './components/InvestmentPartnership'
+import FAQ from './components/FAQ'
 
 // Context
 import { AuthProvider, useAuth } from './contexts/AuthContext'
@@ -60,6 +70,17 @@ function AppContent() {
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/community-guidelines" element={<CommunityGuidelines />} />
               <Route path="/support" element={<SupportPage />} />
+              <Route path="/how-it-works" element={<HowItWorks />} />
+              <Route path="/about" element={<AboutHTK />} />
+              <Route path="/pricing" element={<PricingCredits />} />
+              <Route path="/thank-you" element={<ThankYouSimple />} />
+              <Route path="/community-projects" element={<CommunityProjects />} />
+              <Route path="/trade-collaboration" element={<TradeCollaboration />} />
+              <Route path="/tradesperson-of-the-month" element={<TradespersonOfTheMonth />} />
+              <Route path="/products" element={<ProductShowcase />} />
+              <Route path="/investment-partnership" element={<InvestmentPartnership />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
@@ -87,6 +108,15 @@ function AppContent() {
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/community-guidelines" element={<CommunityGuidelines />} />
               <Route path="/support" element={<SupportPage />} />
+              <Route path="/how-it-works" element={<HowItWorks />} />
+              <Route path="/about" element={<AboutHTK />} />
+              <Route path="/pricing" element={<PricingCredits />} />
+              <Route path="/thank-you" element={<ThankYouSimple />} />
+              <Route path="/community-projects" element={<CommunityProjects />} />
+              <Route path="/trade-collaboration" element={<TradeCollaboration />} />
+              <Route path="/tradesperson-of-the-month" element={<TradespersonOfTheMonth />} />
+              <Route path="/products" element={<ProductShowcase />} />
+              <Route path="/investment-partnership" element={<InvestmentPartnership />} />
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="*" element={<Navigate to="/dashboard" replace />} />

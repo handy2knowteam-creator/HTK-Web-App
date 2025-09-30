@@ -18,8 +18,10 @@ import {
   Star,
   Settings,
   HelpCircle,
-  Search,
-  Plus
+  Award,
+  Heart,
+  Plus,
+  ShoppingCart
 } from 'lucide-react'
 
 export default function NavigationMenu() {
@@ -35,18 +37,21 @@ export default function NavigationMenu() {
         { name: 'Join as Tradesperson', path: '/register/tradesperson', icon: Wrench },
         { name: 'Browse Jobs', path: '/browse-jobs', icon: Search },
         { name: 'Post a Job', path: '/post-job', icon: Plus },
-        { name: 'How It Works', path: '/coming-soon', icon: Info },
-        { name: 'Pricing & Credits', path: '/coming-soon', icon: Star }
+        { name: 'How It Works', path: '/how-it-works', icon: Info },
+        { name: 'Pricing & Credits', path: '/pricing', icon: Star }
       ]
     },
     {
       title: 'Information',
-      icon: BookOpen,
+      icon: Info,
       items: [
-        { name: 'About HTK', path: '/coming-soon', icon: Info },
-        { name: 'Platform Features', path: '/coming-soon', icon: Settings },
-        { name: 'Success Stories', path: '/coming-soon', icon: Star },
-        { name: 'FAQ', path: '/coming-soon', icon: HelpCircle }
+        { name: 'About HTK', path: '/about', icon: Info },
+        { name: 'Community Projects', path: '/community-projects', icon: Heart },
+        { name: 'Trade Collaboration', path: '/trade-collaboration', icon: Users },
+        { name: 'Tradesperson of the Month', path: '/tradesperson-of-the-month', icon: Award },
+        { name: 'Product Showcase', path: '/products', icon: ShoppingCart },
+        { name: 'Investment & Partnership', path: '/investment-partnership', icon: TrendingUp },
+        { name: 'FAQ', path: '/faq', icon: HelpCircle }
       ]
     },
     {
