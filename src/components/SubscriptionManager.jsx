@@ -56,6 +56,7 @@ export default function SubscriptionManager() {
         price: 0,
         interval: 'trial',
         popular: false,
+        priceId: null, // No Stripe price for free trial
         features: [
           '5 free credits to start',
           'Test the platform',
@@ -74,6 +75,7 @@ export default function SubscriptionManager() {
         price: 9.99,
         interval: 'month',
         popular: false,
+        priceId: import.meta.env.VITE_STRIPE_BRONZE_PRICE_ID,
         features: [
           '10 credits per month',
           '£0.99 per credit',
@@ -91,6 +93,7 @@ export default function SubscriptionManager() {
         price: 49.99,
         interval: 'month',
         popular: true,
+        priceId: import.meta.env.VITE_STRIPE_SILVER_PRICE_ID,
         features: [
           '70 credits per month',
           '£0.71 per credit',
@@ -109,6 +112,7 @@ export default function SubscriptionManager() {
         price: 99.99,
         interval: 'month',
         popular: false,
+        priceId: import.meta.env.VITE_STRIPE_GOLD_PRICE_ID,
         features: [
           '160 credits per month',
           '£0.62 per credit',
@@ -128,6 +132,7 @@ export default function SubscriptionManager() {
         price: 149.99,
         interval: 'month',
         popular: false,
+        priceId: null, // Custom pricing - handle separately
         features: [
           '300 credits per month',
           '£0.50 per credit',
@@ -148,20 +153,54 @@ export default function SubscriptionManager() {
     try {
       setIsLoading(true)
       
-      const response = await fetch('/api/create-checkout-session', {
+      // Find the selected package
+      const selectedPackage = availablePackages.find(pkg => pkg.id === packageId)
+      
+      if (!selectedPackage) {
+        throw new Error('Package not found')
+      }
+
+      // Handle free trial separately
+      if (selectedPackage.id === 'free_trial') {
+        // Grant free trial credits directly (would be handled by your backend)
+        alert('Free trial activated! 5 credits have been added to your account.')
+        return
+      }
+
+      // Handle enterprise separately (custom pricing)
+      if (selectedPackage.id === 'enterprise') {
+        alert('Please contact our sales team for enterprise pricing.')
+        return
+      }
+
+      // Check if package has a Price ID
+      if (!selectedPackage.priceId) {
+        throw new Error(`Price ID not configured for ${selectedPackage.name}. Please check environment variables.`)
+      }
+
+      // Get user info (you might want to get this from auth context)
+      const userEmail = localStorage.getItem('htk_user_email') || ''
+      const userName = localStorage.getItem('htk_user_name') || ''
+      
+      const response = await fetch('/.netlify/functions/create-subscription-checkout', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('htkToken')}`
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          package_id: packageId,
-          success_url: `${window.location.origin}/dashboard?tab=subscription&success=true`,
-          cancel_url: `${window.location.origin}/dashboard?tab=subscription&cancelled=true`
+          priceId: selectedPackage.priceId,
+          customerEmail: userEmail,
+          customerName: userName,
+          successUrl: `${window.location.origin}/dashboard?tab=subscription&success=true&package=${selectedPackage.name}`,
+          cancelUrl: `${window.location.origin}/dashboard?tab=subscription&cancelled=true`
         })
       })
 
       const session = await response.json()
+
+      if (session.error) {
+        throw new Error(session.error)
+      }
 
       if (session.url) {
         window.location.href = session.url
@@ -170,7 +209,7 @@ export default function SubscriptionManager() {
       }
     } catch (error) {
       console.error('Upgrade error:', error)
-      alert('Failed to start upgrade process. Please try again.')
+      alert(`Failed to start upgrade process: ${error.message}`)
     } finally {
       setIsLoading(false)
     }
@@ -357,7 +396,7 @@ export default function SubscriptionManager() {
                 
                 <Button
                   onClick={() => handleUpgrade(pkg.id)}
-                  disabled={currentSubscription?.plan_id === pkg.id}
+                  disabled={currentSubscription?.plan_id === pkg.id || (pkg.priceId === undefined && pkg.id !== 'free_trial' && pkg.id !== 'enterprise')}
                   className={`w-full ${
                     pkg.popular 
                       ? 'htk-btn-luxury' 
@@ -366,11 +405,20 @@ export default function SubscriptionManager() {
                 >
                   {currentSubscription?.plan_id === pkg.id 
                     ? 'Current Plan' 
-                    : currentSubscription 
-                      ? 'Upgrade' 
-                      : 'Get Started'
+                    : pkg.priceId === undefined && pkg.id !== 'free_trial' && pkg.id !== 'enterprise'
+                      ? 'Price ID Missing'
+                      : currentSubscription 
+                        ? 'Upgrade' 
+                        : 'Get Started'
                   }
                 </Button>
+                
+                {/* Show Price ID status for debugging */}
+                {pkg.id !== 'free_trial' && pkg.id !== 'enterprise' && (
+                  <div className="text-xs text-gray-500 mt-2 text-center">
+                    Price ID: {pkg.priceId ? '✓ Configured' : '❌ Missing'}
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
