@@ -13,7 +13,7 @@ import TradespersonJobBrowsing from './components/TradespersonJobBrowsing'
 import JobRequestForm from './components/JobRequestForm'
 import SubscriptionManager from './components/SubscriptionManager'
 import StripeIntegration from './components/StripeIntegration'
-import StripePaymentComplete from './components/StripePaymentComplete'
+import StripePaymentToYourAccount from './components/StripePaymentToYourAccount'
 import JobBiddingSystemComplete from './components/JobBiddingSystemComplete'
 import TradeForumComplete from './components/TradeForumComplete'
 import ProfessionalVerificationSystem from './components/ProfessionalVerificationSystem'
@@ -108,7 +108,7 @@ function AppContent() {
               <Route path="/community-projects-dashboard" element={<CommunityProjectsDashboard />} />
               <Route path="/community-hub" element={<CommunityHub />} />
               <Route path="/job-management" element={<JobManagementSystem />} />
-              <Route path="/credits-purchase" element={<StripePaymentComplete />} />
+              <Route path="/credits-purchase" element={<StripePaymentToYourAccount />} />
               <Route path="/job-bidding" element={<JobBiddingSystemComplete />} />
               <Route path="/trade-forum" element={<TradeForumComplete />} />
               <Route path="/professional-verification" element={<ProfessionalVerificationSystem />} />
