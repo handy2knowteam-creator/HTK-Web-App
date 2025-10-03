@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card.j
 import { Button } from '@/components/ui/button.jsx'
 import { Input } from '@/components/ui/input.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
-import { Users, CreditCard, TrendingUp, Download, Search, Filter, Mail, Phone, MapPin, Calendar, Star, Pound } from 'lucide-react'
+import { Users, CreditCard, TrendingUp, Download, Search, Filter, Mail, Phone, MapPin, Calendar, Star, DollarSign } from 'lucide-react'
 
 function AdminDashboard({ onLogout }) {
   const [customers, setCustomers] = useState([])
@@ -222,7 +222,7 @@ function AdminDashboard({ onLogout }) {
           <Card className="htk-card">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium htk-platinum-text">Monthly Revenue</CardTitle>
-              <Pound className="h-4 w-4 text-htk-gold" />
+              <DollarSign className="h-4 w-4 text-htk-gold" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold htk-gold-text">£{analytics.totalRevenue}</div>
