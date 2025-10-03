@@ -92,6 +92,22 @@ function CustomerSignup() {
       existingUsers.push(customerData)
       localStorage.setItem('htk_users', JSON.stringify(existingUsers))
 
+      // Submit to Google Sheets
+      try {
+        await fetch('/.netlify/functions/submit-to-sheets', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            formType: 'customer',
+            data: customerData
+          })
+        })
+      } catch (error) {
+        console.error('Google Sheets submission failed:', error)
+      }
+
       // Send email notification
       await sendEmailNotification(customerData)
 

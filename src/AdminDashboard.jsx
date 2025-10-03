@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
 import { Users, CreditCard, TrendingUp, Download, Search, Filter, Mail, Phone, MapPin, Calendar, Star, Pound } from 'lucide-react'
 
-function AdminDashboard() {
+function AdminDashboard({ onLogout }) {
   const [customers, setCustomers] = useState([])
   const [trades, setTrades] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
@@ -185,9 +185,16 @@ function AdminDashboard() {
     <div className="htk-bg-primary min-h-screen">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold htk-gold-text mb-2">HTK Admin Dashboard</h1>
-          <p className="text-htk-platinum/80">Manage customers, trades, and platform analytics</p>
+        <div className="mb-8 flex justify-between items-center">
+          <div>
+            <h1 className="text-3xl font-bold htk-gold-text mb-2">HTK Admin Dashboard</h1>
+            <p className="text-htk-platinum/80">Manage customers, trades, and platform analytics</p>
+          </div>
+          {onLogout && (
+            <Button onClick={onLogout} variant="outline" className="text-htk-gold border-htk-gold hover:bg-htk-gold hover:text-black">
+              Logout
+            </Button>
+          )}
         </div>
 
         {/* Analytics Cards */}

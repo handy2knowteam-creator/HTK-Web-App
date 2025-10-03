@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label.jsx'
 import { Textarea } from '@/components/ui/textarea.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
 import { Users, Star, Clock, Zap, CreditCard, TrendingUp, Download, Search, Filter, Mail, Phone, MapPin, Calendar, PoundSterling, Menu, X } from 'lucide-react'
+import AdminAuth from './AdminAuth'
 import './App.css'
 import './mobile-optimizations.css'
 
@@ -1190,7 +1191,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/customer-signup" element={<CustomerSignup />} />
           <Route path="/trade-signup" element={<TradeSignup />} />
-          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin" element={<AdminAuth />} />
           <Route path="/how-it-works" element={<HowItWorksPage />} />
           <Route path="/ask-a-trade" element={<AskATradePage />} />
           <Route path="/cost-guides" element={<CostGuidesPage />} />

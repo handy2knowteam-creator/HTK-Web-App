@@ -231,6 +231,22 @@ function TradeSignup() {
         existingUsers.push(tradeData)
         localStorage.setItem('htk_users', JSON.stringify(existingUsers))
 
+        // Submit to Google Sheets
+        try {
+          await fetch('/.netlify/functions/submit-to-sheets', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              formType: 'trade',
+              data: tradeData
+            })
+          })
+        } catch (error) {
+          console.error('Google Sheets submission failed:', error)
+        }
+
         // Send email notification
         await sendTradeEmailNotification(tradeData)
 
