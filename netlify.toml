@@ -34,3 +34,8 @@
 
 # Forced build to clear cache and re-evaluate settings
 
+
+
+[[plugins]]
+package = "@netlify/plugin-functions-install-core"
+
